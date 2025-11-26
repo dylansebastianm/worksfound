@@ -1,6 +1,7 @@
 'use client'
 
 import { FaClock, FaFileAlt, FaRocket } from 'react-icons/fa'
+import Link from 'next/link'
 import styles from './index.module.css'
 
 const steps = [
@@ -79,12 +80,11 @@ export default function JourneyTimeline() {
 
       {/* CTA Button */}
       <div className={styles.ctaContainer}>
-        <button 
-          className={styles.ctaButton}
-          onClick={() => window.open('https://link.centralize.es/widget/booking/F2RSLzq5va0HCErLotg3', '_blank', 'noopener,noreferrer')}
-        >
-          Comienza tu camino hoy
-        </button>
+        <Link href="/checkout">
+          <button className={styles.ctaButton}>
+            Comienza tu camino hoy
+          </button>
+        </Link>
       </div>
     </section>
   )

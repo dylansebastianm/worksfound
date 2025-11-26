@@ -25,9 +25,9 @@ export default function Nav() {
         <div className={styles.item}>Testimonios</div>
         </Link>
         </div>
-        {/* <div className={styles.button}>
-        <Button title={'Contactanos'} />
-        </div> */}
+        <div className={styles.button}>
+        <Button title={'Comenzar ahora'} />
+        </div>
     </div>
   )
 }
