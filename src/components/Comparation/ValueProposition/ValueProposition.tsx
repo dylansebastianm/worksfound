@@ -1,4 +1,4 @@
-import { Card } from "@/components/Ui/card"
+import { Card } from "@/components/Layout/Ui/card"
 import { IoGlobeOutline, IoPeopleOutline, IoFlashOutline, IoAnalyticsOutline } from "react-icons/io5"
 import styles from "./ValueProposition.module.css"
 

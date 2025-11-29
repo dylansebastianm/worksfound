@@ -1,4 +1,4 @@
-import { Card } from "@/components/Ui/card"
+import { Card } from "@/components/Layout/Ui/card"
 import { IoTrendingUp, IoBriefcase, IoTime } from "react-icons/io5"
 import styles from "./SuccessMetrics.module.css"
 

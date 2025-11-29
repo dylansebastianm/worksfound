@@ -1,4 +1,4 @@
-import { Card } from "@/components/Ui/card"
+import { Card } from "@/components/Layout/Ui/card"
 import { IoCheckmark, IoClose } from "react-icons/io5"
 import { HiMinus } from "react-icons/hi"
 import { COMPARISON_CONFIG } from "../config"

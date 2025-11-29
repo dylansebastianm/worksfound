@@ -1,4 +1,4 @@
-import { Card } from "@/components/Ui/card"
+import { Card } from "@/components/Layout/Ui/card"
 import { IoCheckmark } from "react-icons/io5"
 import Link from "next/link"
 import styles from "./CallToAction.module.css"
