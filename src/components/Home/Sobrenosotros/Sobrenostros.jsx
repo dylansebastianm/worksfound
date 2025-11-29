@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./sobrenosotros.module.css";
-import dylan from "./../../../public/assets/dy.png";
-import bruno from "./../../../public/assets/bruno.png";
+import dylan from "./../../../../public/assets/dy.png";
+import bruno from "./../../../../public/assets/bruno.png";
 import Image from "next/image";
 
 export default function Sobrenostros() {

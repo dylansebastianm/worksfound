@@ -1,0 +1,136 @@
+.section {
+  background: oklch(from var(--primary) l c h / 0.05);
+  padding: 5rem 0;
+}
+
+@media (min-width: 768px) {
+  .section {
+    padding: 7rem 0;
+  }
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding: 0 1.5rem;
+  }
+}
+
+.header {
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  padding: 0.5rem 1rem;
+  background: oklch(from var(--primary) l c h / 0.1);
+  color: var(--primary);
+  font-size: 0.875rem;
+  font-weight: 500;
+  border-radius: 9999px;
+}
+
+.title {
+  margin-bottom: 1rem;
+  font-size: 1.875rem;
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--foreground);
+  text-wrap: balance;
+}
+
+@media (min-width: 768px) {
+  .title {
+    font-size: 3rem;
+  }
+}
+
+.subtitle {
+  font-size: 1.125rem;
+  color: var(--muted-foreground);
+  text-wrap: balance;
+}
+
+.grid {
+  display: grid;
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.card {
+  padding: 2rem;
+  text-align: center;
+  transition: box-shadow 0.2s;
+}
+
+.card:hover {
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+}
+
+.iconWrapper {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 4rem;
+  width: 4rem;
+  margin-bottom: 1rem;
+  background: oklch(from var(--primary) l c h / 0.1);
+  border-radius: 9999px;
+}
+
+/* Added icon styles */
+.metricIcon {
+  height: 2rem;
+  width: 2rem;
+  color: var(--primary);
+}
+
+.metricValue {
+  margin-bottom: 0.5rem;
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.metricLabel {
+  color: var(--muted-foreground);
+  font-weight: 500;
+}
+
+.testimonial {
+  margin-top: 4rem;
+  text-align: center;
+}
+
+.testimonialCard {
+  display: inline-block;
+  padding: 2rem;
+  max-width: 48rem;
+}
+
+.testimonialQuote {
+  font-size: 1.125rem;
+  font-style: italic;
+  color: var(--foreground);
+  line-height: 1.6;
+}
+
+.testimonialAuthor {
+  margin-top: 1rem;
+  color: var(--muted-foreground);
+  font-weight: 500;
+}

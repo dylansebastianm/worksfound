@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./footer.module.css";
-import logo from "./../../../public/assets/wf blanco.png";
+import logo from "./../../../../public/assets/wf blanco.png";
 import Image from "next/image";
 import { BiLogoInstagram } from "react-icons/bi";
 import { FaYoutube } from "react-icons/fa";
@@ -75,6 +75,9 @@ export default function Footer() {
           </Link>
           <Link href="#testimonios" passHref className={styles.a}>
             <div className={styles.item}>Testimonios</div>
+          </Link>
+          <Link href="/comparacion" passHref className={styles.a}>
+            <div className={styles.item}>Compara nuestros servicios</div>
           </Link>
           <Link href="/terminos-y-condiciones" passHref className={styles.a}>
             <div className={styles.item}>Términos y Condiciones</div>

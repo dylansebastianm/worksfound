@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./portales.module.css";
 import Image from "next/image";
-import gif from "./../../../public/assets/portales.gif";
+import gif from "./../../../../public/assets/portales.gif";
 import Button from "../Button/Button";
 
 export default function Portales() {

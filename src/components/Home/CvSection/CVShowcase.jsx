@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import { FaMapMarkerAlt, FaEnvelope, FaLinkedin, FaCheckCircle } from 'react-icons/fa'
-import Badge from '../dynamicApplications/Badge'
+import Badge from '../DynamicApplications/Badge'
 import styles from './index.module.css'
 
 const cvContent = {

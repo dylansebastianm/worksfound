@@ -1,7 +1,7 @@
 import React from 'react'
 import styles from './mapa.module.css'
 import Image from 'next/image'
-import mapa from './../../../public/assets/mapa.gif'
+import mapa from './../../../../public/assets/mapa.gif'
 
 export default function Mapa() {
   return (

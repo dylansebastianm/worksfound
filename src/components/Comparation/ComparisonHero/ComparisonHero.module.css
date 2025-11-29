@@ -1,0 +1,209 @@
+.section {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(to bottom, oklch(from var(--primary) l c h / 0.05), var(--background));
+  padding: 6rem 0;
+}
+
+@media (min-width: 768px) {
+  .section {
+    padding: 8rem 0;
+  }
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding: 0 1.5rem;
+  }
+}
+
+.content {
+  max-width: 80rem;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+  padding: 0.5rem 1rem;
+  background: oklch(from var(--primary) l c h / 0.1);
+  color: var(--primary);
+  font-size: 0.875rem;
+  font-weight: 500;
+  border-radius: 9999px;
+}
+
+.title {
+  margin-bottom: 1.5rem;
+  font-size: 2.25rem;
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--foreground);
+  text-wrap: balance;
+}
+
+@media (min-width: 768px) {
+  .title {
+    font-size: 3rem;
+  }
+}
+
+.subtitle {
+  display: block;
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: var(--muted-foreground);
+}
+
+@media (min-width: 768px) {
+  .subtitle {
+    font-size: 1.5rem;
+  }
+}
+
+.logosContainer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+@media (min-width: 768px) {
+  .logosContainer {
+    gap: 2rem;
+  }
+}
+
+.worksfound {
+  font-size: 1.875rem;
+  font-weight: 400;
+  text-transform: lowercase;
+}
+
+@media (min-width: 768px) {
+  .worksfound {
+    font-size: 2.25rem;
+  }
+}
+
+.worksfoundBold {
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.vs {
+  font-size: 1.875rem;
+  font-weight: 300;
+  color: oklch(from var(--muted-foreground) l c h / 0.5);
+}
+
+@media (min-width: 768px) {
+  .vs {
+    font-size: 2.25rem;
+  }
+}
+
+.logoWrapper {
+  position: relative;
+  height: 2.5rem;
+  width: auto;
+}
+
+@media (min-width: 768px) {
+  .logoWrapper {
+    height: 3rem;
+  }
+}
+
+.aiApplyLogo {
+  height: 2.5rem;
+  width: auto;
+  filter: brightness(0) saturate(100%) invert(27%) sepia(98%) saturate(4458%) hue-rotate(261deg) brightness(91%)
+    contrast(101%);
+}
+
+@media (min-width: 768px) {
+  .aiApplyLogo {
+    height: 3rem;
+  }
+}
+
+.talentlyLogo {
+  height: 2.5rem;
+  width: auto;
+}
+
+@media (min-width: 768px) {
+  .talentlyLogo {
+    height: 3rem;
+  }
+}
+
+.description {
+  margin-bottom: 2rem;
+  font-size: 1.125rem;
+  color: var(--muted-foreground);
+  text-wrap: balance;
+}
+
+@media (min-width: 768px) {
+  .description {
+    font-size: 1.25rem;
+  }
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+@media (min-width: 640px) {
+  .buttons {
+    flex-direction: row;
+  }
+}
+
+/* Added button styles with proper padding */
+.primaryButton,
+.secondaryButton {
+  padding: 0.75rem 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 0.5rem;
+  transition: all 0.2s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.primaryButton {
+  background-color: var(--primary);
+  color: var(--primary-foreground);
+}
+
+.primaryButton:hover {
+  background-color: oklch(from var(--primary) calc(l - 0.05) c h);
+}
+
+.secondaryButton {
+  background-color: transparent;
+  color: var(--foreground);
+  border: 1px solid var(--border);
+}
+
+.secondaryButton:hover {
+  background-color: var(--accent);
+}

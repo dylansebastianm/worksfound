@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from './principal.module.css'
-import img1 from './../../../public/assets/img2.png'
+import img1 from './../../../../public/assets/img2.png'
 import Image from 'next/image'
 import Button from '../Button/Button'
 

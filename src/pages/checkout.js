@@ -3,7 +3,7 @@
 import React, { useEffect, useRef } from 'react'
 import Head from 'next/head'
 import { FaCheckCircle, FaGlobe, FaClock, FaShieldAlt, FaTrophy, FaBolt, FaChartLine, FaDollarSign } from 'react-icons/fa'
-import Testimonios from '@/components/testimonios/Testimonios'
+import Testimonios from '@/shared/Testimonios/Testimonios'
 import styles from './checkout.module.css'
 
 export default function CheckoutPage() {
