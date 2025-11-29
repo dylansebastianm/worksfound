@@ -72,13 +72,18 @@
 }
 
 .card {
-  padding: 2rem;
+  padding: 2rem !important;
   text-align: center;
   transition: box-shadow 0.2s;
+  background-color: var(--card) !important;
+  color: var(--card-foreground) !important;
+  border-radius: var(--radius) !important;
+  border: 1px solid var(--border) !important;
+  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1) !important;
 }
 
 .card:hover {
-  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1) !important;
 }
 
 .iconWrapper {
@@ -118,8 +123,13 @@
 
 .testimonialCard {
   display: inline-block;
-  padding: 2rem;
+  padding: 2rem !important;
   max-width: 48rem;
+  background-color: var(--card) !important;
+  color: var(--card-foreground) !important;
+  border-radius: var(--radius) !important;
+  border: 1px solid var(--border) !important;
+  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1) !important;
 }
 
 .testimonialQuote {

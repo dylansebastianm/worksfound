@@ -48,10 +48,9 @@ export function SuccessMetrics() {
         <div className={styles.testimonial}>
           <Card className={styles.testimonialCard}>
             <blockquote className={styles.testimonialQuote}>
-              "A diferencia de AI Apply que solo aplica, y Talently que solo conecta con empresas, WorksFound nos
-              prepara completamente: CV optimizado, estrategia personalizada, y soporte humano en cada paso."
+              "Ninguna empresa puede garantizar la contratación, es uno el que va a las entrevistas, tiene que hacer quizás pruebas técnicas. Pero entre hacerlo solo o con ayuda elegiría mil veces worksfound que a diferencia de otras empresas el riesgo es muchísimo menor"
             </blockquote>
-            <p className={styles.testimonialAuthor}>— Cliente WorksFound, Frontend Developer</p>
+            <p className={styles.testimonialAuthor}>— Joaquín Brondo, Full Stack Developer</p>
           </Card>
         </div>
       </div>

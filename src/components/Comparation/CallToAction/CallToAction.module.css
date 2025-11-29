@@ -27,7 +27,10 @@
     oklch(from var(--primary) l c h / 0.1),
     var(--background),
     oklch(from var(--primary) l c h / 0.05)
-  );
+  ) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: var(--radius) !important;
+  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1) !important;
 }
 
 .cardContent {

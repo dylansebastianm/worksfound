@@ -1,13 +1,16 @@
 import { Card } from "@/components/Ui/card"
 import { IoCheckmark } from "react-icons/io5"
+import Link from "next/link"
 import styles from "./CallToAction.module.css"
 
 const included = [
-  "CV ATS optimizado 100% por nosotros",
+  "CV ATS optimizado bilingüe 100% por nosotros",
   "Postulación automática en +40 portales",
   "Sesión de coaching 1:1 incluida",
   "Soporte humano por WhatsApp y videollamadas",
   "Sin pagos recurrentes ni costos ocultos",
+  "30 días de garantía",
+  "El menor riesgo comparado con otras empresas"
 ]
 
 export function CallToAction() {
@@ -33,8 +36,9 @@ export function CallToAction() {
               </ul>
 
               <div className={styles.buttons}>
-                <button className={styles.primaryButton}>Comenzar ahora</button>
-                <button className={styles.secondaryButton}>Agendar llamada</button>
+                <Link href="/checkout">
+                  <button className={styles.primaryButton}>Comenzar ahora</button>
+                </Link>
               </div>
             </div>
 
@@ -54,8 +58,8 @@ export function CallToAction() {
                   <div className={styles.statLabel}>Portales de empleo</div>
                 </Card>
                 <Card className={styles.statCard}>
-                  <div className={styles.statValue}>2.5min</div>
-                  <div className={styles.statLabel}>Tiempo de respuesta</div>
+                  <div className={styles.statValue}>+3000</div>
+                  <div className={styles.statLabel}>Auto-aplicaciones en &lt;45 días</div>
                 </Card>
               </div>
             </div>

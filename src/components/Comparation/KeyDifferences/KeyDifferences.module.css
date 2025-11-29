@@ -49,23 +49,30 @@
 .grid {
   display: grid;
   gap: 1.5rem;
+  justify-content: center;
 }
 
 @media (min-width: 768px) {
   .grid {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    max-width: 900px;
+    margin: 0 auto;
   }
 }
 
 .card {
-  padding: 1.5rem;
-  border: 1px solid var(--border);
-  border-radius: 0.5rem;
+  padding: 1.5rem !important;
+  background-color: var(--card) !important;
+  color: var(--card-foreground) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: var(--radius) !important;
+  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1) !important;
+  transition: box-shadow 0.2s;
 }
 
 .cardWorksfound {
-  border: 2px solid var(--primary);
-  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+  border: 2px solid var(--primary) !important;
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1) !important;
 }
 
 .cardHeader {

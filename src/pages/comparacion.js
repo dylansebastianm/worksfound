@@ -6,15 +6,19 @@ import { ValueProposition } from "@/components/Comparation/ValueProposition/Valu
 import { SuccessMetrics } from "@/components/Comparation/SuccessMetrics/SuccessMetrics"
 import { CallToAction } from "@/components/Comparation/CallToAction/CallToAction"
 import styles from "./comparacion.module.css"
-console.log({
-  ComparisonHero,
-  ComparisonTable,
-  KeyDifferences,
-  ValueProposition,
-  SuccessMetrics,
-  CallToAction,
-})
+import { useEffect } from "react"
+
 export default function ComparacionPage() {
+  useEffect(() => {
+    console.log("DEBUG comparacion", {
+      ComparisonHero,
+      ComparisonTable,
+      KeyDifferences,
+      ValueProposition,
+      SuccessMetrics,
+      CallToAction,
+    })
+  }, [])
   return (
     <>
       <Head>

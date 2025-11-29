@@ -1,13 +1,13 @@
 import { Card } from "@/components/Ui/card"
-import { IoGlobeOutline, IoTarget, IoPeopleOutline, IoFlashOutline } from "react-icons/io5"
+import { IoGlobeOutline, IoPeopleOutline, IoFlashOutline, IoAnalyticsOutline } from "react-icons/io5"
 import styles from "./ValueProposition.module.css"
 
 const benefits = [
   {
-    icon: IoTarget,
+    icon: IoAnalyticsOutline,
     title: "Enfoque en resultados reales",
     description:
-      "No solo aplicamos, te preparamos para ganar. CV optimizado + coaching + automatización = empleo garantizado en 44 días promedio.",
+      "No solo aplicamos, te preparamos para ganar. CV optimizado bilingue + automatización = +80% de probabilidad de ser contratado en menos de 45 días.",
   },
   {
     icon: IoGlobeOutline,
@@ -19,7 +19,7 @@ const benefits = [
     icon: IoPeopleOutline,
     title: "Soporte humano real",
     description:
-      "WhatsApp, videollamadas, chat en vivo. Respuesta en 2.5 minutos promedio. No más esperar días por un email.",
+      "WhatsApp con asesoramiento personalizado de L a V.",
   },
   {
     icon: IoFlashOutline,

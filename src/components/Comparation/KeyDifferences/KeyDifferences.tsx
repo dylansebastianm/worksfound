@@ -1,11 +1,13 @@
 import { Card } from "@/components/Ui/card"
 import { IoCheckmark, IoClose } from "react-icons/io5"
 import Image from "next/image"
+import { COMPARISON_CONFIG } from "../config"
 import styles from "./KeyDifferences.module.css"
 
 const platforms = [
   {
     name: "WorksFound",
+    key: "worksfound",
     color: "primary",
     logo: null,
     features: [
@@ -13,36 +15,41 @@ const platforms = [
       { text: "+40 portales automáticos", included: true },
       { text: "Coaching 1:1 incluido", included: true },
       { text: "Soporte humano en tiempo real", included: true },
-      { text: "Precio desde USD 150", included: true },
+      { text: "Precio USD 150 (3 meses)", included: true },
     ],
   },
   {
     name: "AI Apply",
+    key: "aiapply",
     color: "blue",
     logo: "/assets/logos/aiapply.png",
     features: [
       { text: "CV ATS optimizado incluido", included: false },
-      { text: "Auto-apply básico", included: true },
+      { text: "Auto-apply", included: true },
       { text: "Coaching 1:1 incluido", included: false },
       { text: "Soporte humano en tiempo real", included: false },
-      { text: "Precio desde USD 150/mes", included: true },
+      { text: "Precio desde USD 180/mes", included: true },
     ],
   },
   {
     name: "Talently",
+    key: "talently",
     color: "purple",
     logo: "/assets/logos/talently-logo.svg",
     features: [
-      { text: "CV ATS optimizado incluido", included: false },
-      { text: "Bolsa de empleo empresas", included: true },
+      { text: "Bolsa de empleo limitada", included: true },
       { text: "Coaching 1:1 incluido", included: false },
       { text: "Soporte humano en tiempo real", included: false },
-      { text: "Precio desde USD 300", included: true },
+      { text: "Solo ofertas de IT", included: false },
     ],
   },
 ]
 
 export function KeyDifferences() {
+  const activePlatforms = platforms.filter(
+    (platform) => COMPARISON_CONFIG[platform.key as keyof typeof COMPARISON_CONFIG]?.enabled
+  )
+  
   return (
     <section className={styles.section}>
       <div className={styles.container}>
@@ -52,7 +59,7 @@ export function KeyDifferences() {
         </div>
 
         <div className={styles.grid}>
-          {platforms.map((platform) => (
+          {activePlatforms.map((platform) => (
             <Card
               key={platform.name}
               className={`${styles.card} ${platform.name === "WorksFound" ? styles.cardWorksfound : ""}`}

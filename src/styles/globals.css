@@ -1,24 +1,100 @@
 :root {
-    /* Primary brand color - used across all components */
-    --color-primary: #fa6501;
-    --brand-orange: var(--color-primary);
-    
-    /* Secondary colors */
-    --color-secondary: #FAE0CF;
-    --color-ternary: #F0975D;
-    --color-muted: #F6AC7A;
-    --color-dark: #753F13;
-    --color-dark-accent: #ED7C32;
-    --color-medium: #86681D;
-    --color-bright: #F88C3C;
-    
-    /* Additional brand colors */
-    --brand-orange-light: #ffa800;
-    --brand-dark: #1a1a1a;
-    --brand-white: #ffffff;
-    --gray-500: #6b7280;
-    --gray-600: #4b5563;
-    --gray-700: #374151;
+  /* Paleta original de la web (compatibilidad con otras secciones) */
+  --color-primary: #fa6501;
+  --brand-orange: var(--color-primary);
+  --color-secondary: #FAE0CF;
+  --color-ternary: #F0975D;
+  --color-muted: #F6AC7A;
+  --color-dark: #753F13;
+  --color-dark-accent: #ED7C32;
+  --color-medium: #86681D;
+  --color-bright: #F88C3C;
+  --brand-orange-light: #ffa800;
+  --brand-dark: #1a1a1a;
+  --brand-white: #ffffff;
+  --gray-500: #6b7280;
+  --gray-600: #4b5563;
+  --gray-700: #374151;
+
+  /* Tokens globales EXACTOS de Vercel v0 (comparación) */
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.145 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.145 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.145 0 0);
+  --primary: oklch(0.62 0.19 35);
+  --primary-foreground: oklch(1 0 0);
+  --secondary: oklch(0.95 0.01 35);
+  --secondary-foreground: oklch(0.2 0 0);
+  --muted: oklch(0.97 0.005 35);
+  --muted-foreground: oklch(0.55 0.01 35);
+  --accent: oklch(0.96 0.02 35);
+  --accent-foreground: oklch(0.2 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(1 0 0);
+  --border: oklch(0.92 0.01 35);
+  --input: oklch(0.922 0 0);
+  --ring: oklch(0.62 0.19 35);
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+
+  /* Radios y fuentes de Vercel v0 */
+  --radius: 0.75rem;
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --font-sans: "Geist", "Geist Fallback", system-ui, -apple-system, sans-serif;
+  --font-mono: "Geist Mono", "Geist Mono Fallback", monospace;
+
+  /* Sidebar */
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: oklch(0.205 0 0);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
+}
+
+.dark {
+  --background: oklch(0.15 0 0);
+  --foreground: oklch(0.98 0 0);
+  --card: oklch(0.18 0 0);
+  --card-foreground: oklch(0.98 0 0);
+  --popover: oklch(0.18 0 0);
+  --popover-foreground: oklch(0.98 0 0);
+  --primary: oklch(0.68 0.19 35);
+  --primary-foreground: oklch(0.15 0 0);
+  --secondary: oklch(0.25 0.01 35);
+  --secondary-foreground: oklch(0.98 0 0);
+  --muted: oklch(0.25 0.01 35);
+  --muted-foreground: oklch(0.65 0.01 35);
+  --accent: oklch(0.25 0.02 35);
+  --accent-foreground: oklch(0.98 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(1 0 0);
+  --border: oklch(0.25 0.01 35);
+  --input: oklch(0.25 0.01 35);
+  --ring: oklch(0.68 0.19 35);
+  --chart-1: oklch(0.68 0.19 35);
+  --chart-2: oklch(0.55 0.15 210);
+  --chart-3: oklch(0.65 0.18 160);
+  --chart-4: oklch(0.8 0.15 80);
+  --chart-5: oklch(0.75 0.2 320);
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(0.269 0 0);
+  --sidebar-ring: oklch(0.439 0 0);
 }
 
 *{

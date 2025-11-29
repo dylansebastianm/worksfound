@@ -77,6 +77,7 @@
   align-items: center;
   justify-content: center;
   gap: 1rem;
+  line-height: 1;
 }
 
 @media (min-width: 768px) {
@@ -87,8 +88,11 @@
 
 .worksfound {
   font-size: 1.875rem;
-  font-weight: 400;
+  font-weight: 700;
   text-transform: lowercase;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
 }
 
 @media (min-width: 768px) {
@@ -97,8 +101,13 @@
   }
 }
 
-.worksfoundBold {
+.worksfoundOrange {
+  color: var(--primary);
   font-weight: 700;
+}
+
+.worksfoundBold {
+  font-weight: 800;
   color: var(--primary);
 }
 
@@ -106,6 +115,9 @@
   font-size: 1.875rem;
   font-weight: 300;
   color: oklch(from var(--muted-foreground) l c h / 0.5);
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
 }
 
 @media (min-width: 768px) {
@@ -129,6 +141,7 @@
 .aiApplyLogo {
   height: 2.5rem;
   width: auto;
+  margin-bottom: 0.25rem;
   filter: brightness(0) saturate(100%) invert(27%) sepia(98%) saturate(4458%) hue-rotate(261deg) brightness(91%)
     contrast(101%);
 }
@@ -136,6 +149,7 @@
 @media (min-width: 768px) {
   .aiApplyLogo {
     height: 3rem;
+    margin-bottom: 0.3rem;
   }
 }
 

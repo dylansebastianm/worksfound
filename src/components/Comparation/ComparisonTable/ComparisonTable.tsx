@@ -1,6 +1,7 @@
 import { Card } from "@/components/Ui/card"
 import { IoCheckmark, IoClose } from "react-icons/io5"
 import { HiMinus } from "react-icons/hi"
+import { COMPARISON_CONFIG } from "../config"
 import styles from "./ComparisonTable.module.css"
 
 const comparisonData = [
@@ -10,26 +11,20 @@ const comparisonData = [
       {
         feature: "CV ATS Optimizado",
         worksfound: "✓ 100% incluido",
-        aiapply: "✗ Auto-apply puro",
-        talently: "✗ Bolsa de empleo",
+        aiapply: "✗ Auto-apply",
+        talently: "✗ Bolsa de empleo reducida",  
       },
       {
         feature: "Postulación automática",
         worksfound: "✓ +40 portales",
-        aiapply: "✓ Plataformas limitadas",
-        talently: "― Bolsa de empresas",
+        aiapply: "✗ Bolsa de empleo limitada",
+        talently: "✗ No",
       },
       {
         feature: "Coaching humano 1:1",
         worksfound: "✓ Incluido",
         aiapply: "✗ No incluido",
         talently: "✗ No incluido",
-      },
-      {
-        feature: "Tiempo primera respuesta",
-        worksfound: "2.5 minutos",
-        aiapply: "Email (24-48h)",
-        talently: "Depende de empresas",
       },
     ],
   },
@@ -40,7 +35,7 @@ const comparisonData = [
         feature: "¿Paga solo si consigue trabajo?",
         worksfound: "✓ Sí",
         aiapply: "✗ No",
-        talently: "✗ No",
+        talently: "✗ No aplica",
       },
       {
         feature: "Riesgo de inversión",
@@ -48,14 +43,14 @@ const comparisonData = [
         worksfoundRisk: "low",
         aiapply: "Alto",
         aiapplyRisk: "high",
-        talently: "Medio",
-        talentlyRisk: "medium",
+        talently: "Nulo",
+        talentlyRisk: "none",
       },
       {
         feature: "Descuento real por pago anticipado",
         worksfound: "✓ Sí",
         aiapply: "✗ No",
-        talently: "✗ No",
+        talently: "✗ No aplica",
       },
       {
         feature: "Pago inicial",
@@ -65,19 +60,19 @@ const comparisonData = [
         aiapply: "USD 180",
         aiapplyNote: "150 por auto-apply + 30 CV",
         aiapplySubnote: "Por mes",
-        talently: "Matrícula USD 300",
+        talently: "No aplica",
       },
       {
         feature: "Costo trimestral",
         worksfound: "USD 150",
         aiapply: "USD 540 (USD 180 × 3 meses)",
-        talently: "USD 300 + variables",
+        talently: "No aplica",
       },
       {
         feature: "Success fee",
         worksfound: "10% del salario (solo si hay empleo)",
         aiapply: "No",
-        talently: "Matrícula + porcentaje del primer sueldo",
+        talently: "No",
       },
     ],
   },
@@ -88,19 +83,19 @@ const comparisonData = [
         feature: "Canales de soporte",
         worksfound: "✓ Chat, WhatsApp, Videollamadas",
         aiapply: "✓ Email, tickets",
-        talently: "✓ Email, plataforma",
+        talently: "✓ Email, Chat",
       },
       {
         feature: "Optimizado para LATAM",
         worksfound: "✓ Especializado",
         aiapply: "✗ Global genérico",
-        talently: "✓ Parcialmente",
+        talently: "✓ Especializado",
       },
       {
         feature: "Aumento salarial promedio",
         worksfound: "✓ 224%",
         aiapply: "✗ N/A",
-        talently: "✓ Variable",
+        talently: "✗ No aplica",
       },
     ],
   },
@@ -147,13 +142,36 @@ function getIcon(value: string, risk: string | null = null) {
   return null
 }
 
+function renderAiapplyValue(text: string, hasNote: boolean, hasSubnote: boolean) {
+  const match = text.match(/^USD 540 \((.+)\)$/)
+  if (match) {
+    return (
+      <span className={styles.valueTextMuted}>
+        <span className={styles.valueText}>USD 540</span>{' '}
+        <span className={styles.subnote} style={{ display: 'inline' }}>({match[1]})</span>
+      </span>
+    )
+  }
+  return (
+    <span className={hasNote && !hasSubnote ? styles.valueTextBold : styles.valueTextMuted}>
+      {text}
+    </span>
+  )
+}
+
 export function ComparisonTable() {
+  const showTalently = COMPARISON_CONFIG.talently.enabled
+  const platformCount = showTalently ? 3 : 2
+  const subtitle = showTalently
+    ? "WorksFound vs AI Apply vs Talently: todos los detalles lado a lado"
+    : "WorksFound vs AI Apply: todos los detalles lado a lado"
+  
   return (
     <section className={styles.section}>
       <div className={styles.container}>
-        <div className={styles.header}>
-          <h2 className={styles.title}>Comparativa entre 3 plataformas</h2>
-          <p className={styles.subtitle}>WorksFound vs AI Apply vs Talently: todos los detalles lado a lado</p>
+        <div className={styles.header} id="comparativa-detallada">
+          <h2 className={styles.title}>Comparativa entre {platformCount} plataformas</h2>
+          <p className={styles.subtitle}>{subtitle}</p>
         </div>
 
         <div className={styles.sections}>
@@ -170,7 +188,7 @@ export function ComparisonTable() {
                       <th className={styles.th}>Característica</th>
                       <th className={`${styles.th} ${styles.thWorksfound}`}>WorksFound</th>
                       <th className={styles.th}>AI Apply</th>
-                      <th className={styles.th}>Talently</th>
+                      {showTalently && <th className={styles.th}>Talently</th>}
                     </tr>
                   </thead>
                   <tbody className={styles.tbody}>
@@ -190,23 +208,23 @@ export function ComparisonTable() {
                         <td className={styles.td}>
                           <div className={styles.valueContainer}>
                             {getIcon(item.aiapply, item.aiapplyRisk)}
-                            <span
-                              className={
-                                item.aiapplyNote && !item.aiapplySubnote ? styles.valueTextBold : styles.valueTextMuted
-                              }
-                            >
-                              {item.aiapply.replace(/[✓✗―]\s*/, "")}
-                            </span>
+                            {renderAiapplyValue(
+                              item.aiapply.replace(/[✓✗―]\s*/, ""),
+                              !!item.aiapplyNote,
+                              !!item.aiapplySubnote
+                            )}
                           </div>
                           {item.aiapplyNote && <p className={styles.subnote}>{item.aiapplyNote}</p>}
                           {item.aiapplySubnote && <p className={styles.subnote}>{item.aiapplySubnote}</p>}
                         </td>
-                        <td className={styles.td}>
-                          <div className={styles.valueContainer}>
-                            {getIcon(item.talently, item.talentlyRisk)}
-                            <span className={styles.valueTextMuted}>{item.talently.replace(/[✓✗―]\s*/, "")}</span>
-                          </div>
-                        </td>
+                        {showTalently && (
+                          <td className={styles.td}>
+                            <div className={styles.valueContainer}>
+                              {getIcon(item.talently, item.talentlyRisk)}
+                              <span className={styles.valueTextMuted}>{item.talently.replace(/[✓✗―]\s*/, "")}</span>
+                            </div>
+                          </td>
+                        )}
                       </tr>
                     ))}
                   </tbody>
