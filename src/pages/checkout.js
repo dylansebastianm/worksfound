@@ -17,8 +17,8 @@ export default function CheckoutPage() {
     if (!paymentButtonRef.current) return
     if (isInitialized.current) return
 
-    const containerId = 'dp-btn-029b1854-2df9-4cb6-bcf7-ad22ebe76a74'
-    const referenceId = '029b1854-2df9-4cb6-bcf7-ad22ebe76a74'
+    const containerId = 'dp-btn-cc25a26c-c544-4b9f-b38a-95b8a1992d38'
+    const referenceId = 'cc25a26c-c544-4b9f-b38a-95b8a1992d38'
 
     // Limpiar cualquier botón existente
     const existingButton = document.getElementById(containerId)
@@ -43,21 +43,7 @@ export default function CheckoutPage() {
 
     // Ejecutar el código exacto del script original
     const scriptCode = `
-      (function(){
-        const z=!!window.DlocalGo,
-        s=z?document.querySelector('script[src="https://static.dlocalgo.com/dlocalgo.min.js"]'):document.createElement("script");
-        z||(s.src="https://static.dlocalgo.com/dlocalgo.min.js",s.async=!0,document.body.appendChild(s));
-        s.addEventListener("load",()=>{
-          const e=document.querySelector('script[data-reference-id="029b1854-2df9-4cb6-bcf7-ad22ebe76a74"]');
-          if(!e) return;
-          if(document.getElementById("dp-btn-029b1854-2df9-4cb6-bcf7-ad22ebe76a74")) return;
-          const t=e.parentNode,
-          n="dp-btn-029b1854-2df9-4cb6-bcf7-ad22ebe76a74",
-          c=document.createElement("div");
-          c.id=n,t.insertBefore(c,e);
-          new DlocalGo("kOVywIEfXAfwnZSBvcXZZwKrYgWrQPFD").createCheckout(n,{subType:"BUTTON",country:"",currency:"USD",amount:"150",lang:"",text:"Pagar"})
-        });
-      })()
+      (function(){const z=!!window.DlocalGo,s=z?document.querySelector('script[src="https://static.dlocalgo.com/dlocalgo.min.js"]'):document.createElement("script");z||(s.src="https://static.dlocalgo.com/dlocalgo.min.js",s.async=!0,document.body.appendChild(s));s.addEventListener("load",()=>{const e=document.querySelector('script[data-reference-id="cc25a26c-c544-4b9f-b38a-95b8a1992d38"]'),t=e.parentNode,n="dp-btn-cc25a26c-c544-4b9f-b38a-95b8a1992d38",c=document.createElement("div");c.id=n,t.insertBefore(c,e);new DlocalGo("cFXMJARieWeaymLxoFOzCCYmudODeVeR").createCheckout(n,{subType:"BUTTON",country:"",currency:"USD",amount:"150",lang:"",text:"Pagar"})});})()
     `
 
     // Crear y ejecutar el script
