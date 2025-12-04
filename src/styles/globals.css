@@ -1,6 +1,6 @@
 :root {
   /* Paleta original de la web (compatibilidad con otras secciones) */
-  --color-primary: #fa6501;
+  --color-primary: #ff6300;
   --brand-orange: var(--color-primary);
   --color-secondary: #FAE0CF;
   --color-ternary: #F0975D;
