@@ -449,13 +449,13 @@
 }
 
 /* Estilos para el botón de DlocalGo */
-.paymentButtonContainer :global(#dp-btn-cc25a26c-c544-4b9f-b38a-95b8a1992d38),
-.paymentButtonContainer :global(#dp-btn-cc25a26c-c544-4b9f-b38a-95b8a1992d38) button,
-.paymentButtonContainer :global(#dp-btn-cc25a26c-c544-4b9f-b38a-95b8a1992d38) > div {
+.paymentButtonContainer :global(#dp-btn-66229e1c-0ec6-425f-83e4-774a86e3738f),
+.paymentButtonContainer :global(#dp-btn-66229e1c-0ec6-425f-83e4-774a86e3738f) button,
+.paymentButtonContainer :global(#dp-btn-66229e1c-0ec6-425f-83e4-774a86e3738f) > div {
   width: 100% !important;
 }
 
-.paymentButtonContainer :global(#dp-btn-cc25a26c-c544-4b9f-b38a-95b8a1992d38) button {
+.paymentButtonContainer :global(#dp-btn-66229e1c-0ec6-425f-83e4-774a86e3738f) button {
   width: 100% !important;
   background-color: var(--color-primary) !important;
   border: none !important;
@@ -467,7 +467,7 @@
   transition: opacity 0.2s !important;
 }
 
-.paymentButtonContainer :global(#dp-btn-cc25a26c-c544-4b9f-b38a-95b8a1992d38) button:hover {
+.paymentButtonContainer :global(#dp-btn-66229e1c-0ec6-425f-83e4-774a86e3738f) button:hover {
   opacity: 0.9 !important;
 }
 

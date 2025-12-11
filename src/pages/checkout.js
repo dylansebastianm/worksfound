@@ -17,8 +17,8 @@ export default function CheckoutPage() {
     if (!paymentButtonRef.current) return
     if (isInitialized.current) return
 
-    const containerId = 'dp-btn-cc25a26c-c544-4b9f-b38a-95b8a1992d38'
-    const referenceId = 'cc25a26c-c544-4b9f-b38a-95b8a1992d38'
+    const containerId = 'dp-btn-66229e1c-0ec6-425f-83e4-774a86e3738f'
+    const referenceId = '66229e1c-0ec6-425f-83e4-774a86e3738f'
 
     // Limpiar cualquier botón existente
     const existingButton = document.getElementById(containerId)
@@ -43,7 +43,7 @@ export default function CheckoutPage() {
 
     // Ejecutar el código exacto del script original
     const scriptCode = `
-      (function(){const z=!!window.DlocalGo,s=z?document.querySelector('script[src="https://static.dlocalgo.com/dlocalgo.min.js"]'):document.createElement("script");z||(s.src="https://static.dlocalgo.com/dlocalgo.min.js",s.async=!0,document.body.appendChild(s));s.addEventListener("load",()=>{const e=document.querySelector('script[data-reference-id="cc25a26c-c544-4b9f-b38a-95b8a1992d38"]'),t=e.parentNode,n="dp-btn-cc25a26c-c544-4b9f-b38a-95b8a1992d38",c=document.createElement("div");c.id=n,t.insertBefore(c,e);new DlocalGo("cFXMJARieWeaymLxoFOzCCYmudODeVeR").createCheckout(n,{subType:"BUTTON",country:"",currency:"USD",amount:"150",lang:"",text:"Pagar"})});})()
+      (function(){const z=!!window.DlocalGo,s=z?document.querySelector('script[src="https://static.dlocalgo.com/dlocalgo.min.js"]'):document.createElement("script");z||(s.src="https://static.dlocalgo.com/dlocalgo.min.js",s.async=!0,document.body.appendChild(s));s.addEventListener("load",()=>{const e=document.querySelector('script[data-reference-id="66229e1c-0ec6-425f-83e4-774a86e3738f"]'),t=e.parentNode,n="dp-btn-66229e1c-0ec6-425f-83e4-774a86e3738f",c=document.createElement("div");c.id=n,t.insertBefore(c,e);new DlocalGo("cFXMJARieWeaymLxoFOzCCYmudODeVeR").createCheckout(n,{subType:"BUTTON",country:"",currency:"USD",amount:"140",lang:"es",text:"Pagar"})});})()
     `
 
     // Crear y ejecutar el script
