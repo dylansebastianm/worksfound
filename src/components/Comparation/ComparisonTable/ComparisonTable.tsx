@@ -54,7 +54,7 @@ const comparisonData = [
       },
       {
         feature: "Pago inicial",
-        worksfound: "USD 150 en un solo pago",
+        worksfound: "USD 140 en un solo pago",
         worksfoundNote: "Cubre 3 meses completos",
         worksfoundSubnote: "Financiable hasta 12 cuotas según banco",
         aiapply: "USD 180",
@@ -64,7 +64,7 @@ const comparisonData = [
       },
       {
         feature: "Costo trimestral",
-        worksfound: "USD 150",
+        worksfound: "USD 140",
         aiapply: "USD 540 (USD 180 × 3 meses)",
         talently: "No aplica",
       },

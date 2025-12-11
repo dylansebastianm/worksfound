@@ -193,7 +193,7 @@ export default function CheckoutPage() {
                 <div className={styles.priceSection}>
                   <p className={styles.priceLabel}>PRECIO ESPECIAL</p>
                   <div className={styles.priceContainer}>
-                    <span className={styles.priceAmount}>$150</span>
+                    <span className={styles.priceAmount}>$140</span>
                     <span className={styles.priceCurrency}>USD</span>
                   </div>
                   <p className={styles.priceSubtext}>Pago único - Sin suscripción</p>
@@ -207,12 +207,12 @@ export default function CheckoutPage() {
                     </div>
                     <div className={styles.summaryRow}>
                       <span className={styles.summaryLabel}>Descuento Early Access</span>
-                      <span className={styles.summaryDiscount}>-$70.00</span>
+                      <span className={styles.summaryDiscount}>-$80.00</span>
                     </div>
                     <div className={styles.summaryDivider}></div>
                     <div className={styles.summaryTotal}>
                       <span>Total</span>
-                      <span>$150.00</span>
+                      <span>$140.00</span>
                     </div>
                   </div>
                 </div>

@@ -49,7 +49,7 @@ export function CallToAction() {
                   <div className={styles.statLabel}>Del salario (solo si hay empleo)</div>
                 </Card>
                 <Card className={styles.statCard}>
-                  <div className={styles.statValue}>USD 150</div>
+                  <div className={styles.statValue}>USD 140</div>
                   <div className={styles.statLabel}>Pago único inicial</div>
                   <div className={styles.statSubLabel}>Hasta 12 cuotas</div>
                 </Card>

@@ -15,7 +15,7 @@ const platforms = [
       { text: "+40 portales automáticos", included: true },
       { text: "Coaching 1:1 incluido", included: true },
       { text: "Soporte humano en tiempo real", included: true },
-      { text: "Precio USD 150 (3 meses)", included: true },
+      { text: "Precio USD 140 (3 meses)", included: true },
     ],
   },
   {
