@@ -39,14 +39,35 @@ const statusConfig = {
   },
 }
 
-// URLs de logos reales de las empresas
-const companyLogos = {
-  'Stripe': 'https://logo.clearbit.com/stripe.com',
-  'Microsoft': 'https://logo.clearbit.com/microsoft.com',
-  'Google': 'https://logo.clearbit.com/google.com',
-  'Amazon': 'https://logo.clearbit.com/amazon.com',
-  'Meta': 'https://logo.clearbit.com/meta.com',
-  'Netflix': 'https://logo.clearbit.com/netflix.com',
+// URLs de logos reales de las empresas - usando múltiples fuentes como fallback
+const getCompanyLogo = (company) => {
+  const logos = {
+    'Stripe': [
+      'https://logo.clearbit.com/stripe.com',
+      'https://cdn.jsdelivr.net/gh/atomiclabs/cryptocurrency-icons@1a63530be6e374711a8554f31b17e4cb92c25fa5/32/color/stripe.png',
+    ],
+    'Microsoft': [
+      'https://logo.clearbit.com/microsoft.com',
+      'https://www.google.com/s2/favicons?domain=microsoft.com&sz=64',
+    ],
+    'Google': [
+      'https://logo.clearbit.com/google.com',
+      'https://www.google.com/s2/favicons?domain=google.com&sz=64',
+    ],
+    'Amazon': [
+      'https://logo.clearbit.com/amazon.com',
+      'https://www.google.com/s2/favicons?domain=amazon.com&sz=64',
+    ],
+    'Meta': [
+      'https://logo.clearbit.com/meta.com',
+      'https://www.google.com/s2/favicons?domain=meta.com&sz=64',
+    ],
+    'Netflix': [
+      'https://logo.clearbit.com/netflix.com',
+      'https://www.google.com/s2/favicons?domain=netflix.com&sz=64',
+    ],
+  }
+  return logos[company]?.[0] || null
 }
 
 const initialApplications = [
@@ -103,6 +124,7 @@ const initialApplications = [
 export default function DynamicApplications() {
   const [applications, setApplications] = useState(initialApplications)
   const [isVisible, setIsVisible] = useState(false)
+  const [imageErrors, setImageErrors] = useState({})
   const containerRef = useRef(null)
 
   useEffect(() => {
@@ -193,14 +215,26 @@ export default function DynamicApplications() {
                 <div className={styles.cardHeader}>
                   <div className={styles.cardCompany}>
                     <div className={styles.logo}>
-                      <Image
-                        src={companyLogos[app.company]}
-                        alt={`${app.company} logo`}
-                        width={40}
-                        height={40}
-                        style={{ objectFit: 'contain' }}
-                        unoptimized
-                      />
+                      {imageErrors[app.company] ? (
+                        <div className={styles.logoPlaceholder}>
+                          {app.company.charAt(0)}
+                        </div>
+                      ) : (
+                        <Image
+                          src={getCompanyLogo(app.company) || '/assets/logo.png'}
+                          alt={`${app.company} logo`}
+                          width={40}
+                          height={40}
+                          style={{ objectFit: 'contain' }}
+                          unoptimized
+                          onError={() => {
+                            setImageErrors((prev) => ({
+                              ...prev,
+                              [app.company]: true,
+                            }))
+                          }}
+                        />
+                      )}
                     </div>
                     <div>
                       <h3 className={styles.companyName}>{app.position}</h3>
