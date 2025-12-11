@@ -1,70 +1,13 @@
 'use client'
 
-import React, { useEffect, useRef } from 'react'
+import React from 'react'
 import Head from 'next/head'
 import { FaCheckCircle, FaGlobe, FaClock, FaShieldAlt, FaTrophy, FaBolt, FaChartLine, FaDollarSign } from 'react-icons/fa'
 import Testimonios from '@/shared/Testimonios/Testimonios'
+import CheckoutForm from '@/components/Forms/CheckoutForm/CheckoutForm'
 import styles from './checkout.module.css'
 
 export default function CheckoutPage() {
-  const paymentButtonRef = useRef(null)
-  const isInitialized = useRef(false)
-  const execScriptRef = useRef(null)
-
-  useEffect(() => {
-    // Solo ejecutar en el cliente
-    if (typeof window === 'undefined') return
-    if (!paymentButtonRef.current) return
-    if (isInitialized.current) return
-
-    const containerId = 'dp-btn-66229e1c-0ec6-425f-83e4-774a86e3738f'
-    const referenceId = '66229e1c-0ec6-425f-83e4-774a86e3738f'
-
-    // Limpiar cualquier botón existente
-    const existingButton = document.getElementById(containerId)
-    if (existingButton) {
-      existingButton.remove()
-    }
-
-    // Limpiar cualquier script con data-reference-id existente
-    const existingRefScripts = document.querySelectorAll(`script[data-reference-id="${referenceId}"]`)
-    existingRefScripts.forEach(script => script.remove())
-
-    // Limpiar el contenedor completamente
-    paymentButtonRef.current.innerHTML = ''
-
-    // Marcar como inicializado ANTES de crear el script para evitar duplicados
-    isInitialized.current = true
-
-    // Crear el script con data-reference-id
-    const referenceScript = document.createElement('script')
-    referenceScript.setAttribute('data-reference-id', referenceId)
-    paymentButtonRef.current.appendChild(referenceScript)
-
-    // Ejecutar el código exacto del script original
-    const scriptCode = `
-      (function(){const z=!!window.DlocalGo,s=z?document.querySelector('script[src="https://static.dlocalgo.com/dlocalgo.min.js"]'):document.createElement("script");z||(s.src="https://static.dlocalgo.com/dlocalgo.min.js",s.async=!0,document.body.appendChild(s));s.addEventListener("load",()=>{const e=document.querySelector('script[data-reference-id="66229e1c-0ec6-425f-83e4-774a86e3738f"]'),t=e.parentNode,n="dp-btn-66229e1c-0ec6-425f-83e4-774a86e3738f",c=document.createElement("div");c.id=n,t.insertBefore(c,e);new DlocalGo("cFXMJARieWeaymLxoFOzCCYmudODeVeR").createCheckout(n,{subType:"BUTTON",country:"",currency:"USD",amount:"140",lang:"es",text:"Pagar"})});})()
-    `
-
-    // Crear y ejecutar el script
-    const execScript = document.createElement('script')
-    execScript.textContent = scriptCode
-    document.body.appendChild(execScript)
-    execScriptRef.current = execScript
-
-    // Cleanup
-    return () => {
-      isInitialized.current = false
-      if (execScriptRef.current && execScriptRef.current.parentNode) {
-        execScriptRef.current.parentNode.removeChild(execScriptRef.current)
-      }
-      // Limpiar botón y scripts al desmontar
-      const btn = document.getElementById(containerId)
-      if (btn) btn.remove()
-      const refScripts = document.querySelectorAll(`script[data-reference-id="${referenceId}"]`)
-      refScripts.forEach(script => script.remove())
-    }
-  }, [])
 
   return (
     <>
@@ -216,14 +159,9 @@ export default function CheckoutPage() {
                     </div>
                   </div>
                 </div>
-                {/* Payment Button Area */}
-                <div className={styles.paymentButtonArea}>
-                  <p className={styles.paymentSecureText}>
-                    Pago seguro procesado por DlocalGo
-                  </p>
-                  <div className={styles.paymentButtonContainer} ref={paymentButtonRef}>
-                    {/* El botón de DlocalGo se renderizará aquí */}
-                  </div>
+                {/* Checkout Form */}
+                <div className={styles.formContainer}>
+                  <CheckoutForm />
                 </div>
                 <div className={styles.securityBadge}>
                   <FaShieldAlt className={styles.securityIcon} />

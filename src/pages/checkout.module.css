@@ -425,6 +425,11 @@
   padding-top: 0.5rem;
 }
 
+/* Form Container */
+.formContainer {
+  margin-bottom: 1.5rem;
+}
+
 /* Payment Button Area */
 .paymentButtonArea {
   min-height: 120px;
