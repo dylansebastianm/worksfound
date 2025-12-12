@@ -1,55 +1,6 @@
-.form {
-  display: flex;
-  flex-direction: column;
-  gap: 1.25rem;
+.countrySelectorWrapper {
   width: 100%;
-}
-
-.formGroup {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-
-.label {
-  font-size: 0.875rem;
-  font-weight: 600;
-  color: #fed7aa;
-  margin-bottom: 0.25rem;
-}
-
-.input,
-.select {
-  width: 100%;
-  background: rgba(255, 255, 255, 0.95);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  color: #111827;
-  font-size: 1rem;
-  padding: 0.75rem 1rem;
-  border-radius: 0.5rem;
-  transition: all 0.2s ease;
-}
-
-.input:focus,
-.select:focus {
-  outline: none;
-  border-color: rgba(255, 255, 255, 0.6);
-  background: white;
-  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.2);
-}
-
-.input::placeholder {
-  color: #9ca3af;
-}
-
-.countryOption {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.flag {
-  font-size: 1.25rem;
+  margin-bottom: 1.5rem;
 }
 
 .error {
@@ -63,24 +14,48 @@
   margin-top: 0.5rem;
 }
 
-.submitButton {
-  width: 100%;
+.paymentButtonArea {
+  min-height: 120px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.paymentSecureText {
+  font-size: 0.875rem;
+  color: #fed7aa;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.paymentButtonContainer {
   background: white;
-  color: var(--color-primary);
-  font-weight: 700;
-  font-size: 1.125rem;
-  padding: 1rem;
   border-radius: 0.5rem;
-  border: none;
-  cursor: pointer;
-  transition: all 0.2s ease;
+  padding: 1.5rem;
+  text-align: center;
+  width: 100%;
+}
+
+.buttonForm {
+  width: 100%;
+}
+
+.submitButton {
+  width: 100% !important;
+  background-color: var(--color-primary) !important;
+  color: white !important;
+  font-weight: 700 !important;
+  font-size: 1.125rem !important;
+  padding: 1rem !important;
+  border-radius: 0.5rem !important;
+  border: none !important;
+  cursor: pointer !important;
+  transition: opacity 0.2s ease !important;
   margin-top: 0.5rem;
 }
 
 .submitButton:hover:not(:disabled) {
-  background: #fef3c7;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  opacity: 0.9 !important;
 }
 
 .submitButton:disabled {
@@ -88,35 +63,4 @@
   cursor: not-allowed;
 }
 
-/* Ajustes para el Select de Radix UI */
-.form :global([data-slot="select-trigger"]) {
-  width: 100%;
-  background: rgba(255, 255, 255, 0.95);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  color: #111827;
-}
-
-.form :global([data-slot="select-trigger"]:focus) {
-  border-color: rgba(255, 255, 255, 0.6);
-  background: white;
-  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.2);
-}
-
-.form :global([data-slot="select-content"]) {
-  background: white;
-  border: 1px solid #e5e7eb;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-}
-
-.form :global([data-slot="select-item"]) {
-  color: #111827;
-}
-
-.form :global([data-slot="select-item"]:hover) {
-  background: #f3f4f6;
-}
-
-.form :global([data-slot="select-item"][data-highlighted]) {
-  background: #f3f4f6;
-}
 

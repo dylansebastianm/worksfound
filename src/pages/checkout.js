@@ -160,9 +160,7 @@ export default function CheckoutPage() {
                   </div>
                 </div>
                 {/* Checkout Form */}
-                <div className={styles.formContainer}>
-                  <CheckoutForm />
-                </div>
+                <CheckoutForm />
                 <div className={styles.securityBadge}>
                   <FaShieldAlt className={styles.securityIcon} />
                   <span>Pago 100% seguro con encriptación SSL</span>
