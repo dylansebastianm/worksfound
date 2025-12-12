@@ -17,6 +17,15 @@ const nextConfig = {
       },
     ],
   },
+  // Servir archivos estáticos de la carpeta email-templates
+  async rewrites() {
+    return [
+      {
+        source: '/email-templates/:path*',
+        destination: '/email-templates/:path*',
+      },
+    ];
+  },
 };
 
 export default nextConfig;
