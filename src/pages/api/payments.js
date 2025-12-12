@@ -20,7 +20,7 @@ const NOTIFICATION_URL =
   'https://services.leadconnectorhq.com/hooks/2QXih6adBOqlYCUJlZAp/webhook-trigger/844745bf-b769-4c6b-88a1-92d05ad9865e'
 const BACK_URL = 'https://www.worksfound.com/checkout'
 const SUCCESS_URL = 'https://www.worksfound.com/thanks'
-const AMOUNT = 1
+const AMOUNT = 140
 const CURRENCY = 'USD'
 
 /**
@@ -37,11 +37,16 @@ export default async function handler(req, res) {
   }
 
   try {
-    const { country } = req.body
+    const { country, phone } = req.body
 
     // Validar que se proporcione el país
     if (!country) {
       return res.status(400).json({ message: 'Country is required' })
+    }
+
+    // Validar que se proporcione el teléfono
+    if (!phone) {
+      return res.status(400).json({ message: 'Phone is required' })
     }
 
     // Credenciales de DlocalGo desde variables de entorno
@@ -66,6 +71,7 @@ export default async function handler(req, res) {
       success_url: SUCCESS_URL,
       back_url: BACK_URL,
       notification_url: NOTIFICATION_URL,
+      phone: phone,
     }
 
     // Construir el Bearer token exactamente como lo requiere la documentación

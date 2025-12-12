@@ -7,9 +7,10 @@
  * Crea un pago en DlocalGo
  * @param {Object} params - Parámetros del pago
  * @param {string} params.country - Código del país (ej: 'BR', 'AR', 'MX')
+ * @param {string} params.phone - Número de teléfono con código de país (ej: '+1234567890')
  * @returns {Promise<Object>} Respuesta de la API con redirect_url para redirigir al usuario
  */
-export async function createPayment({ country }) {
+export async function createPayment({ country, phone }) {
   try {
     // Llamar a nuestra API route que actúa como proxy
     const response = await fetch('/api/payments', {
@@ -17,7 +18,7 @@ export async function createPayment({ country }) {
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ country }),
+      body: JSON.stringify({ country, phone }),
     })
 
     if (!response.ok) {

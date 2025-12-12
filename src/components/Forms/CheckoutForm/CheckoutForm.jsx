@@ -3,11 +3,13 @@
 import React, { useState } from 'react'
 import { Button } from '@/components/Ui/button'
 import CountrySelector from '@/components/Ui/Inputs/CountrySelector'
+import PhoneInput from '@/components/Ui/Inputs/PhoneInput'
 import { createPayment } from '@/lib/dlocalgoService'
 import styles from './CheckoutForm.module.css'
 
 export default function CheckoutForm() {
   const [country, setCountry] = useState('')
+  const [phone, setPhone] = useState('')
   const [isLoading, setIsLoading] = useState(false)
   const [error, setError] = useState('')
 
@@ -21,11 +23,17 @@ export default function CheckoutForm() {
       return
     }
 
+    if (!phone || phone.length < 2) {
+      setError('Por favor ingresa tu número de teléfono')
+      return
+    }
+
     setIsLoading(true)
 
     try {
       const response = await createPayment({
         country: country,
+        phone: phone,
       })
 
       // La API devuelve redirect_url para redirigir al usuario
@@ -48,6 +56,7 @@ export default function CheckoutForm() {
       {/* Country Selector - Outside white wrapper */}
       <div className={styles.countrySelectorWrapper}>
         <CountrySelector value={country} onChange={setCountry} />
+        <PhoneInput value={phone} onChange={setPhone} />
         {error && <div className={styles.error}>{error}</div>}
       </div>
 
