@@ -20,7 +20,7 @@ const NOTIFICATION_URL =
   'https://services.leadconnectorhq.com/hooks/2QXih6adBOqlYCUJlZAp/webhook-trigger/844745bf-b769-4c6b-88a1-92d05ad9865e'
 const BACK_URL = 'https://www.worksfound.com/checkout'
 const SUCCESS_URL = 'https://www.worksfound.com/thanks'
-const AMOUNT = 1
+const AMOUNT = 140
 const CURRENCY = 'USD'
 
 /**
@@ -62,7 +62,7 @@ export default async function handler(req, res) {
       amount: AMOUNT,
       country: country,
       order_id: orderId,
-      description: worksfound.io,
+      description: 'worksfound.io',
       success_url: SUCCESS_URL,
       back_url: BACK_URL,
       notification_url: NOTIFICATION_URL,
