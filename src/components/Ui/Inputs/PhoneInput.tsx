@@ -21,32 +21,43 @@ export default function PhoneInput({ value, onChange }: PhoneInputProps) {
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     let inputValue = e.target.value
+    const cursorPosition = e.target.selectionStart || 0
 
-    // Permitir solo + al inicio y números después
+    // Si está vacío, permitir que se limpie
     if (inputValue.length === 0) {
       setPhone("")
       if (onChange) onChange("")
       return
     }
 
+    // Extraer solo números y el signo +
+    const cleaned = inputValue.replace(/[^0-9+]/g, "")
+
     // Si no empieza con +, agregarlo
-    if (!inputValue.startsWith("+")) {
-      inputValue = "+" + inputValue.replace(/[^0-9]/g, "")
-    } else {
-      // Si empieza con +, permitir solo números después del +
-      const afterPlus = inputValue.substring(1)
-      inputValue = "+" + afterPlus.replace(/[^0-9]/g, "")
+    let formattedValue = cleaned.startsWith("+") ? cleaned : "+" + cleaned.replace(/\+/g, "")
+
+    // Asegurar que solo haya un + al inicio
+    if (formattedValue.length > 1 && formattedValue.indexOf("+", 1) !== -1) {
+      formattedValue = "+" + formattedValue.replace(/\+/g, "")
     }
 
     // Limitar a 100 caracteres máximo
-    if (inputValue.length > 100) {
-      inputValue = inputValue.substring(0, 100)
+    if (formattedValue.length > 100) {
+      formattedValue = formattedValue.substring(0, 100)
     }
 
-    setPhone(inputValue)
+    setPhone(formattedValue)
     if (onChange) {
-      onChange(inputValue)
+      onChange(formattedValue)
     }
+
+    // Restaurar la posición del cursor después de la actualización
+    setTimeout(() => {
+      if (inputRef.current) {
+        const newPosition = Math.min(cursorPosition, formattedValue.length)
+        inputRef.current.setSelectionRange(newPosition, newPosition)
+      }
+    }, 0)
   }
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
@@ -62,21 +73,26 @@ export default function PhoneInput({ value, onChange }: PhoneInputProps) {
         "ArrowRight",
         "ArrowUp",
         "ArrowDown",
+        "Home",
+        "End",
       ].includes(e.key)
     ) {
       return
     }
 
-    // Permitir Ctrl+A, Ctrl+C, Ctrl+V, Ctrl+X
+    // Permitir Ctrl+A, Ctrl+C, Ctrl+V, Ctrl+X, Ctrl+Z
     if (e.ctrlKey || e.metaKey) {
       return
     }
 
-    // Si está en la posición 0 (antes del +), no permitir borrar el +
-    if (inputRef.current?.selectionStart === 0 && e.key !== "+") {
-      e.preventDefault()
+    // Permitir números y el signo + en cualquier posición
+    // El handleChange se encargará de formatear correctamente
+    if (/[0-9+]/.test(e.key)) {
       return
     }
+
+    // Bloquear cualquier otra tecla
+    e.preventDefault()
   }
 
   return (
