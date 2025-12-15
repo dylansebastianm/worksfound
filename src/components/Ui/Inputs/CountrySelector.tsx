@@ -4,27 +4,21 @@ import { useState, useRef, useEffect } from "react"
 import { FaGlobe, FaChevronDown } from "react-icons/fa"
 import styles from "./country-selector.module.css"
 
+// Lista restringida de países permitidos en checkout (cobertura Dlocal)
 const countries = [
   { code: "AR", name: "Argentina" },
   { code: "BO", name: "Bolivia" },
+  { code: "BR", name: "Brasil" },
   { code: "CL", name: "Chile" },
   { code: "CO", name: "Colombia" },
   { code: "CR", name: "Costa Rica" },
-  { code: "CU", name: "Cuba" },
   { code: "EC", name: "Ecuador" },
-  { code: "SV", name: "El Salvador" },
-  { code: "ES", name: "España" },
   { code: "GT", name: "Guatemala" },
-  { code: "HN", name: "Honduras" },
   { code: "MX", name: "México" },
-  { code: "NI", name: "Nicaragua" },
   { code: "PA", name: "Panamá" },
   { code: "PY", name: "Paraguay" },
   { code: "PE", name: "Perú" },
-  { code: "PR", name: "Puerto Rico" },
-  { code: "DO", name: "República Dominicana" },
   { code: "UY", name: "Uruguay" },
-  { code: "VE", name: "Venezuela" },
 ]
 
 interface CountrySelectorProps {

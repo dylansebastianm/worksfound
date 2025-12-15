@@ -56,6 +56,16 @@ export default function CheckoutForm() {
       {/* Country Selector - Outside white wrapper */}
       <div className={styles.countrySelectorWrapper}>
         <CountrySelector value={country} onChange={setCountry} />
+        <p className={styles.countryHelpText}>
+          Si tu país no se encuentra en esta lista entonces puedes pagar{" "}
+          <a
+            href="https://onei.la/0rc"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            haciendo click aquí
+          </a>
+        </p>
         <PhoneInput value={phone} onChange={setPhone} />
         {error && <div className={styles.error}>{error}</div>}
       </div>

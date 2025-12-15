@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState, useRef, useEffect } from "react"
 import { FaPhone } from "react-icons/fa"
 import styles from "./phone-input.module.css"
 
@@ -11,6 +11,7 @@ interface PhoneInputProps {
 
 export default function PhoneInput({ value, onChange }: PhoneInputProps) {
   const [phone, setPhone] = useState<string>(value || "")
+  const inputRef = useRef<HTMLInputElement>(null)
 
   useEffect(() => {
     if (value !== undefined) {
@@ -19,18 +20,79 @@ export default function PhoneInput({ value, onChange }: PhoneInputProps) {
   }, [value])
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const inputValue = e.target.value
-    
-    // Solo permitir + y números
-    const cleaned = inputValue.replace(/[^0-9+]/g, "")
-    
-    // Limitar a 100 caracteres
-    const limited = cleaned.length > 100 ? cleaned.substring(0, 100) : cleaned
-    
-    setPhone(limited)
-    if (onChange) {
-      onChange(limited)
+    let inputValue = e.target.value
+    const cursorPosition = e.target.selectionStart || 0
+
+    // Si está vacío, permitir que se limpie
+    if (inputValue.length === 0) {
+      setPhone("")
+      if (onChange) onChange("")
+      return
     }
+
+    // Extraer solo números y el signo +
+    const cleaned = inputValue.replace(/[^0-9+]/g, "")
+
+    // Si no empieza con +, agregarlo
+    let formattedValue = cleaned.startsWith("+") ? cleaned : "+" + cleaned.replace(/\+/g, "")
+
+    // Asegurar que solo haya un + al inicio
+    if (formattedValue.length > 1 && formattedValue.indexOf("+", 1) !== -1) {
+      formattedValue = "+" + formattedValue.replace(/\+/g, "")
+    }
+
+    // Limitar a 100 caracteres máximo
+    if (formattedValue.length > 100) {
+      formattedValue = formattedValue.substring(0, 100)
+    }
+
+    setPhone(formattedValue)
+    if (onChange) {
+      onChange(formattedValue)
+    }
+
+    // Restaurar la posición del cursor después de la actualización
+    setTimeout(() => {
+      if (inputRef.current) {
+        const newPosition = Math.min(cursorPosition, formattedValue.length)
+        inputRef.current.setSelectionRange(newPosition, newPosition)
+      }
+    }, 0)
+  }
+
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    // Permitir backspace, delete, tab, escape, enter, y flechas
+    if (
+      [
+        "Backspace",
+        "Delete",
+        "Tab",
+        "Escape",
+        "Enter",
+        "ArrowLeft",
+        "ArrowRight",
+        "ArrowUp",
+        "ArrowDown",
+        "Home",
+        "End",
+      ].includes(e.key)
+    ) {
+      return
+    }
+
+    // Permitir Ctrl+A, Ctrl+C, Ctrl+V, Ctrl+X, Ctrl+Z
+    if (e.ctrlKey || e.metaKey) {
+      return
+    }
+
+    // Permitir números y el signo + en cualquier posición
+    // El handleChange se encargará de formatear correctamente
+    if (/[0-9+]/.test(e.key)) {
+      return
+    }
+
+    // Bloquear cualquier otra tecla
+    e.preventDefault()
   }
 
   return (
@@ -39,11 +101,13 @@ export default function PhoneInput({ value, onChange }: PhoneInputProps) {
       <div className={styles.inputWrapper}>
         <FaPhone className={styles.icon} />
         <input
+          ref={inputRef}
           type="text"
           className={styles.input}
           placeholder="+1234567890"
           value={phone}
           onChange={handleChange}
+          onKeyDown={handleKeyDown}
           maxLength={100}
         />
       </div>
