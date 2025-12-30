@@ -43,13 +43,13 @@ export default function Home() {
     <Portales />
     </div>
     <JourneyTimeline />
+    <DynamicApplications />
+    <CVShowcase />
     <Linea title={'Sus logros, nuestros logros'}/>
     <div id="testimonios" className="testimonios-home">
       <Testimonios variant="home" cardHeight={220} />
     </div>
     <StatsShowcase />
-    <CVShowcase />
-    <DynamicApplications />
     <div id="empresas">
     <Mapa />
     </div>

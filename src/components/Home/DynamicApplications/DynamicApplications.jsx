@@ -39,35 +39,20 @@ const statusConfig = {
   },
 }
 
-// URLs de logos reales de las empresas - usando múltiples fuentes como fallback
-const getCompanyLogo = (company) => {
-  const logos = {
-    'Stripe': [
-      'https://logo.clearbit.com/stripe.com',
-      'https://cdn.jsdelivr.net/gh/atomiclabs/cryptocurrency-icons@1a63530be6e374711a8554f31b17e4cb92c25fa5/32/color/stripe.png',
-    ],
-    'Microsoft': [
-      'https://logo.clearbit.com/microsoft.com',
-      'https://www.google.com/s2/favicons?domain=microsoft.com&sz=64',
-    ],
-    'Google': [
-      'https://logo.clearbit.com/google.com',
-      'https://www.google.com/s2/favicons?domain=google.com&sz=64',
-    ],
-    'Amazon': [
-      'https://logo.clearbit.com/amazon.com',
-      'https://www.google.com/s2/favicons?domain=amazon.com&sz=64',
-    ],
-    'Meta': [
-      'https://logo.clearbit.com/meta.com',
-      'https://www.google.com/s2/favicons?domain=meta.com&sz=64',
-    ],
-    'Netflix': [
-      'https://logo.clearbit.com/netflix.com',
-      'https://www.google.com/s2/favicons?domain=netflix.com&sz=64',
-    ],
-  }
-  return logos[company]?.[0] || null
+// Logos locales (evita fallos por rate-limit/403 de servicios externos)
+const companyLogos = {
+  Stripe: '/assets/logos/stripe.png',
+  Microsoft: '/assets/logos/microsoft.png',
+  Google: '/assets/logos/google.png',
+  Amazon: '/assets/logos/amazon.png',
+  Meta: '/assets/logos/meta.png',
+  Netflix: '/assets/logos/netflix.png',
+}
+
+const logoClassByCompany = {
+  Google: styles.logoImgGoogle,
+  Meta: styles.logoImgMeta,
+  Netflix: styles.logoImgNetflix,
 }
 
 const initialApplications = [
@@ -124,7 +109,6 @@ const initialApplications = [
 export default function DynamicApplications() {
   const [applications, setApplications] = useState(initialApplications)
   const [isVisible, setIsVisible] = useState(false)
-  const [imageErrors, setImageErrors] = useState({})
   const containerRef = useRef(null)
 
   useEffect(() => {
@@ -203,6 +187,8 @@ export default function DynamicApplications() {
         <div className={styles.applicationsGrid}>
           {applications.map((app, index) => {
             const config = statusConfig[app.status]
+            const logoSrc = companyLogos[app.company] || '/assets/logos/worksfound-logo.png'
+            const logoClassName = `${styles.logoImg} ${logoClassByCompany[app.company] || ''}`
 
             return (
               <Card
@@ -215,26 +201,13 @@ export default function DynamicApplications() {
                 <div className={styles.cardHeader}>
                   <div className={styles.cardCompany}>
                     <div className={styles.logo}>
-                      {imageErrors[app.company] ? (
-                        <div className={styles.logoPlaceholder}>
-                          {app.company.charAt(0)}
-                        </div>
-                      ) : (
-                        <Image
-                          src={getCompanyLogo(app.company) || '/assets/logo.png'}
-                          alt={`${app.company} logo`}
-                          width={40}
-                          height={40}
-                          style={{ objectFit: 'contain' }}
-                          unoptimized
-                          onError={() => {
-                            setImageErrors((prev) => ({
-                              ...prev,
-                              [app.company]: true,
-                            }))
-                          }}
-                        />
-                      )}
+                      <Image
+                        src={logoSrc}
+                        alt={`${app.company} logo`}
+                        width={40}
+                        height={40}
+                        className={logoClassName}
+                      />
                     </div>
                     <div>
                       <h3 className={styles.companyName}>{app.position}</h3>

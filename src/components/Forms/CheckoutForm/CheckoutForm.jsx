@@ -4,12 +4,14 @@ import React, { useState } from 'react'
 import { Button } from '@/components/Ui/button'
 import CountrySelector from '@/components/Ui/Inputs/CountrySelector'
 import PhoneInput from '@/components/Ui/Inputs/PhoneInput'
+import { AlternativePaymentAlert } from '@/components/Ui/AlertPayment/AlternativePayments'
 import { createPayment } from '@/lib/dlocalgoService'
 import styles from './CheckoutForm.module.css'
 
 export default function CheckoutForm() {
   const [country, setCountry] = useState('')
   const [phone, setPhone] = useState('')
+  const [acceptedTerms, setAcceptedTerms] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
   const [error, setError] = useState('')
 
@@ -25,6 +27,11 @@ export default function CheckoutForm() {
 
     if (!phone || phone.length < 2) {
       setError('Por favor ingresa tu número de teléfono')
+      return
+    }
+
+    if (!acceptedTerms) {
+      setError('Debes aceptar los términos y condiciones para continuar.')
       return
     }
 
@@ -56,16 +63,11 @@ export default function CheckoutForm() {
       {/* Country Selector - Outside white wrapper */}
       <div className={styles.countrySelectorWrapper}>
         <CountrySelector value={country} onChange={setCountry} />
-        <p className={styles.countryHelpText}>
-          Si tu país no se encuentra en esta lista entonces puedes pagar{" "}
-          <a
-            href="https://onei.la/0rc"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            haciendo click aquí
-          </a>
-        </p>
+        <AlternativePaymentAlert
+          onAlternativePaymentClick={() => {
+            window.open('https://onei.la/0rc', '_blank', 'noopener,noreferrer')
+          }}
+        />
         <PhoneInput value={phone} onChange={setPhone} />
         {error && <div className={styles.error}>{error}</div>}
       </div>
@@ -76,11 +78,35 @@ export default function CheckoutForm() {
           Pago seguro procesado por DlocalGo
         </p>
         <div className={styles.paymentButtonContainer}>
+          <div className={styles.termsRow}>
+            <input
+              id="accept-terms"
+              type="checkbox"
+              className={styles.termsCheckbox}
+              checked={acceptedTerms}
+              onChange={(e) => {
+                const next = e.target.checked
+                setAcceptedTerms(next)
+                if (next) setError('')
+              }}
+            />
+            <label htmlFor="accept-terms" className={styles.termsLabel}>
+              Al continuar aceptas nuestros{' '}
+              <a
+                href="/terminos-y-condiciones"
+                className={styles.termsLink}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                términos y condiciones
+              </a>
+            </label>
+          </div>
           <form onSubmit={handleSubmit} className={styles.buttonForm}>
             <Button
               type="submit"
               className={styles.submitButton}
-              disabled={isLoading}
+              disabled={isLoading || !acceptedTerms}
               size="lg"
             >
               {isLoading ? 'Procesando...' : 'Pagar'}

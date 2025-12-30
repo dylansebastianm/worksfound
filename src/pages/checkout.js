@@ -16,7 +16,8 @@ export default function CheckoutPage() {
         <meta name="description" content="Completa tu pago para acceder a los servicios de WorksFound" />
       </Head>
       <main className={styles.main}>
-        <div className={styles.container}>
+        <div className={styles.scaled}>
+          <div className={styles.container}>
           {/* Header */}
           <div className={styles.header}>
             <span className={styles.badge}>WorksFound.io Premium</span>
@@ -178,12 +179,6 @@ export default function CheckoutPage() {
                   </div>
                 </div>
               </div>
-              <div className={styles.terms}>
-                <p>
-                  Al continuar aceptas nuestros{' '}
-                  <a href="/terminos-y-condiciones" className={styles.link}>términos y condiciones</a>
-                </p>
-              </div>
             </div>
           </div>
           {/* Bottom Trust Bar */}
@@ -206,6 +201,7 @@ export default function CheckoutPage() {
                 <p className={styles.trustText}>Acceso inmediato</p>
               </div>
             </div>
+          </div>
           </div>
         </div>
 

@@ -20,35 +20,36 @@
   position: absolute;
   left: 16px;
   font-size: 18px;
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(17, 24, 39, 0.65);
   z-index: 1;
   pointer-events: none;
 }
 
 .input {
   width: 100%;
-  padding: 14px 16px 14px 48px;
-  background-color: rgba(255, 255, 255, 0.15);
-  border: 1px solid rgba(255, 255, 255, 0.25);
+  padding: 15px 16px 15px 48px;
+  min-height: 48px;
+  background-color: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.12);
   border-radius: 8px;
-  color: rgba(255, 255, 255, 0.9);
+  color: #111827;
   font-size: 15px;
   transition: all 0.2s ease;
   outline: none;
 }
 
 .input::placeholder {
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(107, 114, 128, 0.8);
 }
 
 .input:hover {
-  background-color: rgba(255, 255, 255, 0.2);
-  border-color: rgba(255, 255, 255, 0.35);
+  background-color: #ffffff;
+  border-color: rgba(0, 0, 0, 0.18);
 }
 
 .input:focus {
-  border-color: rgba(255, 255, 255, 0.5);
-  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.1);
-  background-color: rgba(255, 255, 255, 0.2);
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(255, 99, 0, 0.2);
+  background-color: #ffffff;
 }
 

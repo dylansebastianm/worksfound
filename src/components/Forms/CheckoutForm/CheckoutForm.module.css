@@ -51,6 +51,66 @@
   width: 100%;
 }
 
+.termsRow {
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+  padding: 0.85rem 1rem;
+  border-radius: 0.75rem;
+  border: 1px solid rgba(234, 88, 12, 0.35);
+  background: #fff7ed;
+  margin-bottom: 1rem;
+  text-align: left;
+}
+
+.termsCheckbox {
+  width: 18px;
+  height: 18px;
+  margin-top: 2px;
+  flex: 0 0 auto;
+  appearance: none;
+  -webkit-appearance: none;
+  background: #ffffff;
+  border: 2px solid rgba(234, 88, 12, 0.6);
+  border-radius: 4px;
+  display: grid;
+  place-content: center;
+  cursor: pointer;
+}
+
+.termsCheckbox:checked {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.termsCheckbox:checked::after {
+  content: "";
+  width: 8px;
+  height: 5px;
+  border-left: 2px solid #ffffff;
+  border-bottom: 2px solid #ffffff;
+  transform: rotate(-45deg);
+  margin-top: -1px;
+}
+
+.termsCheckbox:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(255, 99, 0, 0.25);
+}
+
+.termsLabel {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  color: #7c2d12;
+}
+
+.termsLink {
+  color: var(--color-primary);
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
 .buttonForm {
   width: 100%;
 }
