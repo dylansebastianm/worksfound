@@ -49,14 +49,14 @@ export default async function handler(req, res) {
       return res.status(400).json({ message: 'Phone is required' })
     }
 
-    // Credenciales de DlocalGo desde variables de entorno
-    const API_KEY = process.env.NEXT_PUBLIC_DLOCALGO_API_KEY
-    const API_SECRET = process.env.NEXT_PUBLIC_DLOCALGO_API_SECRET
+    // Credenciales de DlocalGo desde variables de entorno (NO usar NEXT_PUBLIC_ para secretos)
+    const API_KEY = process.env.DLOCALGO_API_KEY
+    const API_SECRET = process.env.DLOCALGO_API_SECRET
 
     if (!API_KEY || !API_SECRET) {
       return res.status(500).json({
         message:
-          'Las credenciales de DlocalGo no están configuradas. Por favor configura NEXT_PUBLIC_DLOCALGO_API_KEY y NEXT_PUBLIC_DLOCALGO_API_SECRET en tu archivo .env.local',
+          'Las credenciales de DlocalGo no están configuradas. Por favor configura DLOCALGO_API_KEY y DLOCALGO_API_SECRET en tu archivo .env.local',
       })
     }
 
