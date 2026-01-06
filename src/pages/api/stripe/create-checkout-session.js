@@ -48,7 +48,7 @@ export default async function handler(req, res) {
               description:
                 'Automatización de postulaciones + CV optimizado ATS + sesión personalizada',
             },
-            unit_amount: 100, // $1.00 USD (provisorio para testing)
+            unit_amount: 14000, // $140.00 USD
           },
           quantity: 1,
         },
