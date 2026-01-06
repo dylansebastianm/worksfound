@@ -103,6 +103,18 @@ export default function CheckoutPage() {
                   </div>
                 </div>
               </div>
+              <div className={styles.paymentTermsCard}>
+                <div className={styles.paymentTermsIcon}>
+                  <FaDollarSign />
+                </div>
+                <div className={styles.paymentTermsContent}>
+                  <h3 className={styles.paymentTermsTitle}>Ingreso a bajo costo</h3>
+                  <p className={styles.paymentTermsText}>
+                    Termina de pagar <strong>SOLO si consigues empleo</strong> con nuestra ayuda.
+                    Tu éxito es nuestro compromiso.
+                  </p>
+                </div>
+              </div>
               <div className={styles.successCard}>
                 <div className={styles.successIcon}>
                   <FaChartLine />
@@ -121,18 +133,6 @@ export default function CheckoutPage() {
             </div>
             {/* Right Column - Payment Area */}
             <div className={styles.rightColumn}>
-              <div className={styles.paymentTermsCard}>
-                <div className={styles.paymentTermsIcon}>
-                  <FaDollarSign />
-                </div>
-                <div className={styles.paymentTermsContent}>
-                  <h3 className={styles.paymentTermsTitle}>Ingreso a bajo costo</h3>
-                  <p className={styles.paymentTermsText}>
-                    Termina de pagar <strong>SOLO si consigues empleo</strong> con nuestra ayuda.
-                    Tu éxito es nuestro compromiso.
-                  </p>
-                </div>
-              </div>
               <div className={styles.paymentCard}>
                 <div className={styles.priceSection}>
                   <p className={styles.priceLabel}>PRECIO ESPECIAL</p>
