@@ -13,7 +13,7 @@ export default function Terminos() {
           TÉRMINOS Y CONDICIONES – worksfound LLC
         </h1>
         <p className="global-text" style={{ marginBottom: '2rem' }}>
-          Última actualización: 16 de noviembre de 2025
+          Última actualización: 21 de febrero de 2026
         </p>
 
         <p className="global-text">
@@ -46,12 +46,7 @@ export default function Terminos() {
           <li>Guías y materiales gratuitos para mejorar el perfil de LinkedIn.</li>
         </ul>
 
-        <h3 className="global-title">1.3. Sesión de coaching general</h3>
-        <ul className="global-text">
-          <li>Una sesión de coaching incluida sin costo adicional.</li>
-        </ul>
-
-        <h3 className="global-title">1.4. Servicio de Auto-Apply (automatización de postulaciones)</h3>
+        <h3 className="global-title">1.3. Servicio de Auto-Apply (automatización de postulaciones)</h3>
         <p className="global-text">Durante 60 días, Worksfound enviará postulaciones en nombre del usuario, de acuerdo con:</p>
         <ul className="global-text">
           <li>El título objetivo seleccionado (ej.: "Frontend Developer").</li>
@@ -70,7 +65,7 @@ export default function Terminos() {
           Dado que cada oferta puede tener formularios específicos o personalizados, no garantizamos que las respuestas sean completamente precisas, completas o coincidan con la intención exacta del usuario.
         </p>
 
-        <h3 className="global-title">1.5. Base de empresas asociadas</h3>
+        <h3 className="global-title">1.4. Base de empresas asociadas</h3>
         <p className="global-text">El usuario puede ser incorporado en una base consultada por más de 250 empresas asociadas.</p>
 
         <h2 className="global-title">2. Estructura económica y duración del servicio</h2>
@@ -79,7 +74,7 @@ export default function Terminos() {
         <ul className="global-text">
           <li>Creación del CV optimizado.</li>
           <li>60 días de Auto-Apply.</li>
-          <li>30 días extras de acompañamiento ("garantía").</li>
+          <li>30 días extras.</li>
           <li>Recursos adicionales gratuitos.</li>
         </ul>
         <p className="global-text">El usuario puede financiar el pago a través de la pasarela de pago utilizada por Worksfound.</p>
@@ -95,17 +90,8 @@ export default function Terminos() {
           <li>Que las ofertas coincidan exactamente con el stack tecnológico.</li>
           <li>Que el idioma requerido sea el mismo del usuario.</li>
           <li>Resultados laborales de ningún tipo.</li>
+          <li>Que la cantidad de ofertas aplicadas sea similar o exacta a la cantidad de ofertas disponibles en el portal de empleo, ya que los tiempos en que se crea y publica la oferta pueden no estar alineados con los tiempos de búsqueda y postulación automática de Worksfound.</li>
         </ul>
-
-        <h3 className="global-title">2.3. AIC – Acuerdo de Ingresos Compartidos (solo en caso de éxito)</h3>
-        <p className="global-text">Aplica únicamente si el usuario consigue trabajo con ayuda de Worksfound:</p>
-        <ul className="global-text">
-          <li>10% del salario neto mensual</li>
-          <li>Durante 12 meses</li>
-          <li>Máximo de 333 USD por mes</li>
-          <li>Tope de 4.000 USD por año</li>
-        </ul>
-        <p className="global-text">Si el usuario no consigue empleo, no paga AIC.</p>
 
         <h2 className="global-title">3. Obligaciones del usuario</h2>
         <p className="global-text">El usuario acepta:</p>
@@ -185,7 +171,7 @@ export default function Terminos() {
         </p>
         <p className="global-text">
           Worksfound la procesará en un plazo máximo de 72 horas.
-          La eliminación no anula obligaciones económicas pendientes (como el AIC).
+          La eliminación no anula obligaciones económicas pendientes.
         </p>
 
         <h2 className="global-title">12. Datos y privacidad</h2>

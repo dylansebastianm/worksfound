@@ -6,7 +6,6 @@ import styles from "./CallToAction.module.css"
 const included = [
   "CV ATS optimizado bilingüe 100% por nosotros",
   "Postulación automática en +40 portales",
-  "Sesión de coaching 1:1 incluida",
   "Soporte humano por WhatsApp y videollamadas",
   "Sin pagos recurrentes ni costos ocultos",
   "30 días de garantía",
@@ -44,10 +43,6 @@ export function CallToAction() {
 
             <div className={styles.statsSection}>
               <div className={styles.statsGrid}>
-                <Card className={styles.statCard}>
-                  <div className={styles.statValue}>10%</div>
-                  <div className={styles.statLabel}>Del salario (solo si hay empleo)</div>
-                </Card>
                 <Card className={styles.statCard}>
                   <div className={styles.statValue}>USD 140</div>
                   <div className={styles.statLabel}>Pago único inicial</div>

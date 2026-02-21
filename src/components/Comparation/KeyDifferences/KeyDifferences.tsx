@@ -13,7 +13,6 @@ const platforms = [
     features: [
       { text: "CV ATS optimizado incluido", included: true },
       { text: "+40 portales automáticos", included: true },
-      { text: "Coaching 1:1 incluido", included: true },
       { text: "Soporte humano en tiempo real", included: true },
       { text: "Precio USD 140 (3 meses)", included: true },
     ],
@@ -26,7 +25,6 @@ const platforms = [
     features: [
       { text: "CV ATS optimizado incluido", included: false },
       { text: "Auto-apply", included: true },
-      { text: "Coaching 1:1 incluido", included: false },
       { text: "Soporte humano en tiempo real", included: false },
       { text: "Precio desde USD 180/mes", included: true },
     ],
@@ -38,7 +36,6 @@ const platforms = [
     logo: "/assets/logos/talently-logo.svg",
     features: [
       { text: "Bolsa de empleo limitada", included: true },
-      { text: "Coaching 1:1 incluido", included: false },
       { text: "Soporte humano en tiempo real", included: false },
       { text: "Solo ofertas de IT", included: false },
     ],

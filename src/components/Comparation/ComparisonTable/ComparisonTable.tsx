@@ -20,23 +20,11 @@ const comparisonData = [
         aiapply: "✗ Bolsa de empleo limitada",
         talently: "✗ No",
       },
-      {
-        feature: "Coaching humano 1:1",
-        worksfound: "✓ Incluido",
-        aiapply: "✗ No incluido",
-        talently: "✗ No incluido",
-      },
     ],
   },
   {
     category: "Precios y condiciones",
     items: [
-      {
-        feature: "¿Paga solo si consigue trabajo?",
-        worksfound: "✓ Sí",
-        aiapply: "✗ No",
-        talently: "✗ No aplica",
-      },
       {
         feature: "Riesgo de inversión",
         worksfound: "Bajo",
@@ -45,12 +33,6 @@ const comparisonData = [
         aiapplyRisk: "high",
         talently: "Nulo",
         talentlyRisk: "none",
-      },
-      {
-        feature: "Descuento real por pago anticipado",
-        worksfound: "✓ Sí",
-        aiapply: "✗ No",
-        talently: "✗ No aplica",
       },
       {
         feature: "Pago inicial",
@@ -67,12 +49,6 @@ const comparisonData = [
         worksfound: "USD 140",
         aiapply: "USD 540 (USD 180 × 3 meses)",
         talently: "No aplica",
-      },
-      {
-        feature: "Success fee",
-        worksfound: "10% del salario (solo si hay empleo)",
-        aiapply: "No",
-        talently: "No",
       },
     ],
   },

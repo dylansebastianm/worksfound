@@ -2,7 +2,7 @@
 
 import React from 'react'
 import Head from 'next/head'
-import { FaCheckCircle, FaGlobe, FaClock, FaShieldAlt, FaTrophy, FaBolt, FaChartLine, FaDollarSign } from 'react-icons/fa'
+import { FaCheckCircle, FaGlobe, FaShieldAlt, FaTrophy, FaBolt, FaChartLine } from 'react-icons/fa'
 import Testimonios from '@/shared/Testimonios/Testimonios'
 import CheckoutForm from '@/components/Forms/CheckoutForm/CheckoutForm'
 import styles from './checkout.module.css'
@@ -25,7 +25,7 @@ export default function CheckoutPage() {
               Tu camino hacia el empleo ideal comienza ahora
             </h1>
             <p className={styles.subtitle}>
-              Automatización completa de postulaciones en +40 portales con CV optimizado y sesión personalizada
+              Automatización completa de postulaciones en +40 portales con CV optimizado
             </p>
           </div>
           <div className={styles.gridLayout}>
@@ -41,7 +41,7 @@ export default function CheckoutPage() {
                       <FaGlobe className={styles.icon} />
                     </div>
                     <div>
-                      <h3 className={styles.featureTitle}>Postulación automática a +40 portales</h3>
+                      <h3 className={styles.featureTitle}>Postulación automática en +40 portales</h3>
                       <p className={styles.featureDescription}>
                         LinkedIn, Bumeran, Indeed, Glassdoor y más de 36 plataformas adicionales
                       </p>
@@ -55,17 +55,6 @@ export default function CheckoutPage() {
                       <h3 className={styles.featureTitle}>CV optimizado ATS bilingüe</h3>
                       <p className={styles.featureDescription}>
                         Currículum profesional en inglés y español, optimizado para sistemas de tracking
-                      </p>
-                    </div>
-                  </div>
-                  <div className={styles.featureItem}>
-                    <div className={styles.featureIcon}>
-                      <FaClock className={styles.icon} />
-                    </div>
-                    <div>
-                      <h3 className={styles.featureTitle}>Sesión de coaching general</h3>
-                      <p className={styles.featureDescription}>
-                        Sesión personalizada para mejorar tu perfil y estrategia de búsqueda laboral
                       </p>
                     </div>
                   </div>
@@ -101,18 +90,6 @@ export default function CheckoutPage() {
                     <div className={styles.benefitNumber}>10x</div>
                     <div className={styles.benefitLabel}>Más rápido que postular manualmente</div>
                   </div>
-                </div>
-              </div>
-              <div className={styles.paymentTermsCard}>
-                <div className={styles.paymentTermsIcon}>
-                  <FaDollarSign />
-                </div>
-                <div className={styles.paymentTermsContent}>
-                  <h3 className={styles.paymentTermsTitle}>Ingreso a bajo costo</h3>
-                  <p className={styles.paymentTermsText}>
-                    Termina de pagar <strong>SOLO si consigues empleo</strong> con nuestra ayuda.
-                    Tu éxito es nuestro compromiso.
-                  </p>
                 </div>
               </div>
               <div className={styles.successCard}>

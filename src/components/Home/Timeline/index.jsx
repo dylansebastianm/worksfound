@@ -3,13 +3,6 @@
 import { useEffect, useRef, useState } from 'react'
 import styles from './index.module.css'
 
-const KickoffIcon = () => (
-  <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-    <circle cx="12" cy="12" r="9" strokeWidth="1.5" />
-    <path strokeWidth="1.5" strokeLinecap="round" d="M12 7v5l3 2" />
-  </svg>
-)
-
 const CVIcon = () => (
   <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
     <path strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" d="M9 12h6m-6 4h6m2-13H7a2 2 0 00-2 2v14a2 2 0 002 2h10a2 2 0 002-2V5a2 2 0 00-2-2z" />
@@ -52,18 +45,12 @@ const ProcessTimeline = () => {
   const steps = [
     {
       number: 1,
-      title: 'Kick-off',
-      description: 'Vemos tu caso puntual 1 a 1 y alineamos expectativas',
-      icon: <KickoffIcon />
-    },
-    {
-      number: 2,
       title: 'CV Optimizado',
       description: 'Creación de CV ATS friendly 100% hecho por nosotros',
       icon: <CVIcon />
     },
     {
-      number: 3,
+      number: 2,
       title: 'worksFound.io',
       description: 'Acceso a +40 portales de empleo con automatización 100%',
       icon: <RocketIcon />

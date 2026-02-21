@@ -46,7 +46,7 @@ export default async function handler(req, res) {
             product_data: {
               name: 'WorksFound.io Premium',
               description:
-                'Automatización de postulaciones + CV optimizado ATS + sesión personalizada',
+                'Automatización de postulaciones + CV optimizado ATS',
             },
             unit_amount: 14000, // $140.00 USD
           },

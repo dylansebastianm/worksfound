@@ -64,16 +64,16 @@ export default function Footer() {
         <div className={styles.contacto}>
           <div className={styles.titleSecciones}>Secciones</div>
           <div className={styles.hr2}/>
-          <Link href="#empresas" passHref className={styles.a}>
+          <Link href="/#empresas" passHref className={styles.a}>
             <div className={styles.item}>Empresas</div>
           </Link>
-          <Link href="#beneficios" passHref className={styles.a}>
+          <Link href="/#beneficios" passHref className={styles.a}>
             <div className={styles.item}>Beneficios</div>
           </Link>
-          <Link href="#portales" passHref className={styles.a}>
+          <Link href="/#portales" passHref className={styles.a}>
             <div className={styles.item}>Portales</div>
           </Link>
-          <Link href="#testimonios" passHref className={styles.a}>
+          <Link href="/#testimonios" passHref className={styles.a}>
             <div className={styles.item}>Testimonios</div>
           </Link>
           <Link href="/comparacion" passHref className={styles.a}>
@@ -115,7 +115,7 @@ export default function Footer() {
       </div>
       <div className={styles.hr} />
       <div className={styles.copy}>
-        © Copyright 2025 WorksFound LLC. Todos los derechos reservados
+        © Copyright 2026 WorksFound LLC. Todos los derechos reservados
       </div>
     </div>
   );

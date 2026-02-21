@@ -20,7 +20,7 @@ export function ComparisonHero() {
         <div className={styles.content}>
           <div className={styles.badge}>
             <IoCheckmark style={{ height: "1rem", width: "1rem" }} />
-            Comparación actualizada 2025
+            Comparación actualizada 2026
           </div>
 
           <h1 className={styles.title}>

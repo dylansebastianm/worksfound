@@ -1,24 +1,18 @@
 'use client'
 
-import { FaClock, FaFileAlt, FaRocket } from 'react-icons/fa'
+import { FaFileAlt, FaRocket } from 'react-icons/fa'
 import Link from 'next/link'
 import styles from './index.module.css'
 
 const steps = [
   {
     number: 1,
-    title: 'Kick-off',
-    description: 'Vemos tu caso puntual 1 a 1 y alineamos expectativas',
-    icon: FaClock,
-  },
-  {
-    number: 2,
     title: 'CV Optimizado',
     description: 'Creación de CV ATS friendly 100% hecho por nosotros',
     icon: FaFileAlt,
   },
   {
-    number: 3,
+    number: 2,
     title: 'worksFound.io',
     description: 'Acceso a +40 portales de empleo con automatización 100%',
     icon: FaRocket,
