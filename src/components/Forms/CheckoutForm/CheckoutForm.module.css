@@ -14,7 +14,7 @@
 .paymentMethodTitle {
   font-size: 1rem;
   font-weight: 700;
-  color: #ffffff;
+  color: #111827;
   margin: 0 0 0.75rem;
 }
 
@@ -170,7 +170,7 @@
 
 .paymentSecureText {
   font-size: 0.875rem;
-  color: #fed7aa;
+  color: var(--color-primary);
   text-align: center;
   margin-bottom: 1rem;
 }

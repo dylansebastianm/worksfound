@@ -21,7 +21,12 @@ export function TestimonialCard({ videoId, nombre, cargo, fecha, variant = 'defa
   
   return (
     <div className={styles.card} style={cardStyle}>
-      <YouTubeVideo videoId={videoId} width={videoWidth} height={videoHeight} />
+      <YouTubeVideo
+        videoId={videoId}
+        width={videoWidth}
+        height={videoHeight}
+        thumbnailFirst={variant === 'mini'}
+      />
       {/* <div className={styles.content}>
         <h3 className={styles.nombre}>{nombre}</h3>
         <p className={styles.cargo}>{cargo}</p>

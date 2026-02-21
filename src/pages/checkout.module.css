@@ -1,7 +1,7 @@
 /* Main Container */
 .main {
   min-height: 100vh;
-  background: linear-gradient(to bottom, #fff7ed, #ffffff, #fff7ed);
+  background: #f5f5f5;
   padding: 3rem 0;
 }
 
@@ -72,6 +72,7 @@
   grid-template-columns: 1fr;
   gap: 2rem;
   margin-bottom: 3rem;
+  align-items: start;
 }
 
 @media (min-width: 768px) {
@@ -96,7 +97,7 @@
   }
 }
 
-/* Left Column */
+/* Left Column - fondo naranja detrás del contenido */
 .leftColumn {
   display: flex;
   flex-direction: column;
@@ -105,6 +106,9 @@
   max-width: 100%;
   overflow: hidden;
   box-sizing: border-box;
+  background: linear-gradient(180deg, var(--color-primary) 0%, #c2410c 100%);
+  border-radius: 0.75rem;
+  padding: 1.5rem;
 }
 
 .card {
@@ -339,16 +343,17 @@
 }
 
 .paymentCard {
-  background: linear-gradient(135deg, var(--color-primary) 0%, #c2410c 100%);
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
   border-radius: 0.75rem;
   padding: 2rem;
-  color: white;
-  box-shadow: 0 20px 40px rgba(234, 88, 12, 0.2);
+  color: #111827;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .paymentCard:hover {
-  box-shadow: 0 25px 50px rgba(234, 88, 12, 0.3);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
 }
 
 .priceSection {
@@ -357,7 +362,7 @@
 }
 
 .priceLabel {
-  color: #fed7aa;
+  color: #6b7280;
   font-size: 0.875rem;
   margin-bottom: 0.5rem;
 }
@@ -373,22 +378,23 @@
   font-size: 3rem;
   font-weight: 700;
   line-height: 1;
+  color: var(--color-primary);
 }
 
 .priceCurrency {
   font-size: 1.25rem;
-  color: #fed7aa;
+  color: #6b7280;
 }
 
 .priceSubtext {
-  color: #fed7aa;
+  color: #6b7280;
   font-size: 0.875rem;
   margin-top: 0.5rem;
 }
 
 .summaryBox {
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
+  background: #fff7ed;
+  border: 1px solid #fed7aa;
   border-radius: 0.5rem;
   padding: 1.5rem;
   margin-bottom: 1.5rem;
@@ -399,6 +405,7 @@
   margin-bottom: 1rem;
   text-align: center;
   font-size: 1.125rem;
+  color: #111827;
 }
 
 .summaryList {
@@ -415,20 +422,21 @@
 }
 
 .summaryLabel {
-  color: #fed7aa;
+  color: #6b7280;
 }
 
 .summaryValue {
   font-weight: 500;
+  color: #111827;
 }
 
 .summaryDiscount {
   font-weight: 500;
-  color: #86efac;
+  color: #16a34a;
 }
 
 .summaryDivider {
-  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  border-top: 1px solid #e5e7eb;
   margin: 0.5rem 0;
 }
 
@@ -438,6 +446,7 @@
   font-size: 1.125rem;
   font-weight: 700;
   padding-top: 0.5rem;
+  color: #111827;
 }
 
 /* Form Container */
@@ -455,7 +464,7 @@
 
 .paymentSecureText {
   font-size: 0.875rem;
-  color: #fed7aa;
+  color: #6b7280;
   text-align: center;
   margin-bottom: 1rem;
 }
@@ -497,7 +506,7 @@
   justify-content: center;
   gap: 0.5rem;
   font-size: 0.75rem;
-  color: #fed7aa;
+  color: #6b7280;
   margin-top: 1.5rem;
 }
 
