@@ -7,8 +7,8 @@ import styles from './youtubeVideo.module.css'
 const THUMB_HQ = (id) => `https://img.youtube.com/vi/${id}/hqdefault.jpg`
 const THUMB_MAX = (id) => `https://img.youtube.com/vi/${id}/maxresdefault.jpg`
 
-export function YouTubeVideo({ videoId, width = 560, height = 400, className = '', thumbnailFirst = false }) {
-  const [playing, setPlaying] = useState(!thumbnailFirst)
+export function YouTubeVideo({ videoId, width = 560, height = 400, className = '', thumbnailFirst = true }) {
+  const [playing, setPlaying] = useState(false)
   const [thumbSrc, setThumbSrc] = useState(THUMB_MAX(videoId))
 
   const onThumbError = () => setThumbSrc(THUMB_HQ(videoId))
