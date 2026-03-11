@@ -25,41 +25,38 @@ export default function Terminos() {
           admin@worksfound.com
         </p>
         <p className="global-text">
-          Estos Términos y Condiciones ("Términos") regulan el acceso y uso de los servicios de Worksfound, incluyendo el servicio de Auto-Apply, la creación de CV, recursos de optimización profesional, coaching y cualquier funcionalidad presente en www.worksfound.com o sus subdominios ("Sitio" o "Servicios").
+          Estos Términos y Condiciones ("Términos") regulan el acceso y uso de los servicios de Worksfound, incluyendo herramientas de autogestión para CV, el servicio de Auto-Apply (automatización de postulaciones), recursos de optimización profesional, coaching y cualquier funcionalidad presente en www.worksfound.com o sus subdominios ("Sitio" o "Servicios"). Salvo el Auto-Apply, los servicios consisten en herramientas y recursos para que el usuario realice las acciones por su cuenta.
         </p>
         <p className="global-text">
           Al utilizar nuestros Servicios usted acepta estos Términos. Si no está de acuerdo, no debe usar Worksfound.
         </p>
 
         <h2 className="global-title">1. Servicios que ofrece Worksfound</h2>
-        <p className="global-text">Worksfound brinda herramientas y servicios orientados a mejorar la empleabilidad del usuario, incluyendo:</p>
+        <p className="global-text">
+          Worksfound brinda herramientas y plataformas para que el usuario gestione y mejore su empleabilidad por su cuenta (autogestión). Ningún servicio implica que Worksfound realice tareas en nombre del usuario más allá de la automatización de postulaciones descrita en el Auto-Apply. Lo ofrecido incluye:
+        </p>
 
-        <h3 className="global-title">1.1. Creación de CV optimizado</h3>
+        <h3 className="global-title">1.1. Herramientas para crear y optimizar tu CV</h3>
+        <p className="global-text">Worksfound pone a disposición una aplicación y recursos para que el usuario cree, redacte y optimice su propio CV. La creación, redacción y optimización del CV es responsabilidad y tarea del usuario; Worksfound no está obligado a redactar, diseñar ni generar CVs en nombre del usuario.</p>
         <ul className="global-text">
-          <li>Redacción y diseño de un CV completamente nuevo.</li>
-          <li>Optimización ATS (Applicant Tracking Systems).</li>
-          <li>Generado mediante IA y revisado manualmente por el equipo de Worksfound.</li>
+          <li>Herramientas para redacción y diseño de CV (incl. optimización ATS).</li>
+          <li>Uso de IA asistida por el usuario dentro de la plataforma.</li>
         </ul>
 
         <h3 className="global-title">1.2. Recursos para optimizar LinkedIn</h3>
         <ul className="global-text">
-          <li>Guías y materiales gratuitos para mejorar el perfil de LinkedIn.</li>
+          <li>Guías y materiales para que el usuario mejore por su cuenta su perfil de LinkedIn.</li>
         </ul>
 
         <h3 className="global-title">1.3. Servicio de Auto-Apply (automatización de postulaciones)</h3>
-        <p className="global-text">Durante 60 días, Worksfound enviará postulaciones en nombre del usuario, de acuerdo con:</p>
+        <p className="global-text">Durante 60 días, Worksfound enviará postulaciones en nombre del usuario de forma automatizada, según la configuración que el usuario defina. El usuario es quien selecciona y gestiona sus preferencias (título objetivo, modalidad, filtros). El servicio incluye:</p>
         <ul className="global-text">
-          <li>El título objetivo seleccionado (ej.: "Frontend Developer").</li>
-          <li>La modalidad elegida (remoto, híbrido u on-site).</li>
-          <li>Filtros adicionales, sin garantizar coincidencia exacta.</li>
-        </ul>
-        <p className="global-text">El servicio incluye:</p>
-        <ul className="global-text">
-          <li>Creación de una cuenta del usuario en la plataforma interna de Worksfound.</li>
+          <li>Cuenta del usuario en la plataforma de Worksfound.</li>
           <li>Carga voluntaria por parte del usuario de sus credenciales de portales de empleo.</li>
-          <li>Envío automático de postulaciones a ofertas activas que coincidan principalmente con el título objetivo.</li>
-          <li>Respuestas automáticas a formularios dentro de los portales</li>
+          <li>Envío automático de postulaciones a ofertas activas que coincidan principalmente con el título objetivo elegido por el usuario.</li>
+          <li>Respuestas automáticas a formularios dentro de los portales, usando únicamente la información que el usuario haya cargado.</li>
         </ul>
+        <p className="global-text">Criterios de búsqueda (a título informativo): título objetivo (ej. "Frontend Developer"), modalidad (remoto, híbrido u on-site) y filtros adicionales, sin garantizar coincidencia exacta.</p>
         <p className="global-text">
           Worksfound podrá completar automáticamente solo los formularios que se encuentren dentro de los portales de empleo compatibles, utilizando exclusivamente la información cargada por el usuario en su perfil.
           Dado que cada oferta puede tener formularios específicos o personalizados, no garantizamos que las respuestas sean completamente precisas, completas o coincidan con la intención exacta del usuario.
@@ -70,12 +67,12 @@ export default function Terminos() {
 
         <h2 className="global-title">2. Estructura económica y duración del servicio</h2>
         <h3 className="global-title">2.1. Pago único</h3>
-        <p className="global-text">Incluye:</p>
+        <p className="global-text">Incluye acceso a:</p>
         <ul className="global-text">
-          <li>Creación del CV optimizado.</li>
+          <li>Herramientas para que el usuario cree y optimice su propio CV (autogestión).</li>
           <li>60 días de Auto-Apply.</li>
           <li>30 días extras.</li>
-          <li>Recursos adicionales gratuitos.</li>
+          <li>Recursos adicionales gratuitos para uso autogestionado.</li>
         </ul>
         <p className="global-text">El usuario puede financiar el pago a través de la pasarela de pago utilizada por Worksfound.</p>
 
@@ -124,8 +121,7 @@ export default function Terminos() {
         <p className="global-text">Esto no otorga derecho a reembolso.</p>
 
         <h2 className="global-title">6. Uso de IA y precisión</h2>
-        <p className="global-text">El CV y algunos procesos utilizan IA.</p>
-        <p className="global-text">El usuario reconoce que:</p>
+        <p className="global-text">Las herramientas de CV y otros procesos disponibles en la plataforma pueden utilizar IA asistida por el usuario. El usuario reconoce que:</p>
         <ul className="global-text">
           <li>La IA puede generar contenido inexacto.</li>
           <li>Worksfound no garantiza precisión absoluta.</li>
@@ -189,13 +185,14 @@ export default function Terminos() {
         <p className="global-text">El usuario es responsable de la seguridad de sus credenciales.</p>
 
         <h2 className="global-title">14. Limitación de responsabilidad</h2>
-        <p className="global-text">(Cláusula estándar usada en empresas como AIApply)</p>
         <p className="global-text">Worksfound no será responsable por:</p>
         <ul className="global-text">
           <li>Daños indirectos, incidentales o especiales.</li>
           <li>Pérdida de ingresos u oportunidades laborales.</li>
           <li>Errores generados por IA o automatización.</li>
-          <li>Sanciones o bloqueos en portales laborales.</li>
+          <li>
+            Sanciones, bloqueos temporales o permanentes de cuentas impuestos por los portales de empleo (LinkedIn, Indeed, y otros). Los portales de empleo pueden aplicar sus propias políticas y restricciones, y Worksfound no se hace responsable de dichas medidas ni de sus consecuencias.
+          </li>
           <li>Fallas técnicas de terceros.</li>
         </ul>
         <p className="global-text">
